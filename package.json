@@ -1,0 +1,45 @@
+{
+  "name": "akrabi",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^9.0.0",
+    "framer-motion": "^10.16.4",
+    "husky": "^8.0.3",
+    "locomotive-scroll": "^5.0.0-beta.8",
+    "next": "13.5.4",
+    "prettier": "^3.0.3",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/locomotive-scroll": "^4.1.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.4",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js, jsx, ts, tsx}": "eslint --cache --fix",
+    "*.{js, jsx, ts, tsx, css, md}": "prettier --write"
+  }
+}

@@ -1,3 +1,4 @@
+import { GetCurrentYear } from "@/helpers/getCurrentYear";
 import React from "react";
 
 type Props = {};
@@ -45,7 +46,7 @@ const Footer = (props: Props) => {
         </div>
         <div className="h-0.5 w-full col-span-12 mt-16 my-6 bg-black/20"></div>
         <div className="col-span-3 text-lg text-[#7E7E7E]">
-          <h1>© 2023 Akrabi. All Rights Reserved</h1>
+          <h1>© {GetCurrentYear()} Akrabi. All Rights Reserved</h1>
         </div>
       </div>
     </div>

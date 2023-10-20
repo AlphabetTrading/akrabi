@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 import { Barlow_Condensed } from "next/font/google";
 import Footer from "@/components/common/Footer";
+import Navbar from "@/components/common/Navbar";
 
 const barlow_condensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={barlow_condensed.className}>
+        <Navbar />
         {children}
         <Footer />
       </body>

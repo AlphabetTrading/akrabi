@@ -1,3 +1,5 @@
+"use client";
+
 import { GetCurrentYear } from "@/helpers/getCurrentYear";
 import React from "react";
 

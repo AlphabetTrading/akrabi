@@ -5,9 +5,7 @@ type Props = {
 };
 
 const Title = ({ text }: Props) => {
-  return (
-    <h1 className="text-5xl font-semibold underline leading-normal">{text}</h1>
-  );
+  return <h1 className="text-5xl font-semibold">{text}</h1>;
 };
 
 export default Title;

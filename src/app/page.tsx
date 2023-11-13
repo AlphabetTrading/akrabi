@@ -14,7 +14,7 @@ export default function Home() {
       <CompanyMotto />
       {/* <Sustainability/>
       <Clients/> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       {/* <FAQs/> */}
     </main>
   );

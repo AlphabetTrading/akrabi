@@ -1,6 +1,7 @@
 "use client";
 
 import { GetCurrentYear } from "@/helpers/getCurrentYear";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -14,35 +15,85 @@ const Footer = (props: Props) => {
             Akrabi<span className="text-[#FFB800]">.</span>
           </h1>
           <p className="text-lg text-text/70">
-            Lorem ipsum dolor sit amet consectetur. Massa rhoncus cursus iaculis
-            turpis egestas egestas sem. Neque ligula vel id varius imperdiet
-            pellentesque.
+            <span className="font-semibold">Green Coffee, Global Reach</span>:
+            Elevate your brew with ugs
           </p>
-          <div className="flex gap-x-3">
-            <img src="/icons/facebook.svg" />
-            <img src="/icons/instagram.svg" />
-            <img src="/icons/x.svg" />
-          </div>
+          <ul className="flex items-center gap-x-3 h-10">
+            {[
+              {
+                id: 1,
+                alt: "facebook",
+                image: "/icons/facebook.svg",
+                link: "/#",
+              },
+              {
+                id: 2,
+                alt: "instagram",
+                image: "/icons/instagram.svg",
+                link: "/#",
+              },
+              {
+                // fill with twitter
+                id: 3,
+                alt: "x",
+                image: "/icons/x.svg",
+                link: "/#",
+              },
+            ].map((item, index) => (
+              <li
+                key={index}
+                className="group hover:scale-110 cursor-pointer transition-all duration-200 w-8 h-8 relative flex justify-center items-center"
+              >
+                <Link
+                  href={item.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="relative z-10"
+                >
+                  <img src={item.image} alt={item.alt} />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="col-span-2"></div>
         <div className="col-span-7">
           <div className="flex gap-x-16">
             <div className="flex flex-col gap-y-2">
               <h1 className="text-2xl font-semibold mb-3">Quick Links</h1>
-              <h1 className="text-xl">Home</h1>
-              <h1 className="text-xl">Producers</h1>
-              <h1 className="text-xl">Farms</h1>
+              <ul className="text-xl">
+                <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                  <Link href="/">Home</Link>
+                </li>
+                <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                  <Link href="/producers">Producers</Link>
+                </li>
+                <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                  <Link href="/farms">Farms</Link>
+                </li>
+              </ul>
             </div>
             <div className="flex flex-col gap-y-2">
               <h1 className="text-2xl font-semibold mb-3">Resources</h1>
-              <h1 className="text-xl">Traceability</h1>
-              <h1 className="text-xl">Deforestation</h1>
-              <h1 className="text-xl">Sustainabih1ty</h1>
+              <ul className="text-xl">
+                <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                  <Link href="/traceability">Traceability</Link>
+                </li>
+                <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                  <Link href="/deforestation">Deforestation</Link>
+                </li>
+              </ul>
             </div>
             <div className="flex flex-col gap-y-2">
               <h1 className="text-2xl font-semibold mb-3">About</h1>
-              <h1 className="text-xl">About Us</h1>
-              <h1 className="text-xl">Contact Us</h1>
+              <ul className="text-xl">
+                {/* <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                  <Link href="/about-us">About Us</Link>
+                </li> */}
+                <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                  <Link href="/contact-us">Contact Us</Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

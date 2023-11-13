@@ -1,3 +1,5 @@
+"use client";
+
 import Concerns from "@/components/Deforestation/Concerns";
 import Definition from "@/components/Deforestation/Definition";
 import EURegulation from "@/components/Deforestation/EURegulation";

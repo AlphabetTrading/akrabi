@@ -1,3 +1,5 @@
+"use client";
+
 import Bio from "@/components/Producers/Bio";
 import Interview from "@/components/Producers/Interview";
 import LandingPage from "@/components/Producers/LandingPage";

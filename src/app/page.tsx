@@ -1,3 +1,5 @@
+"use client";
+
 import CompanyMotto from "@/components/Home/CompanyMotto";
 import LandingPage from "@/components/Home/LandingPage";
 import Process from "@/components/Home/Process";

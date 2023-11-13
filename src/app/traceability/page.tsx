@@ -1,7 +1,8 @@
-import CTA from "@/components/Farms/CTA";
-import LandingPage from "@/components/Home/LandingPage";
+import CTA from "@/components/Traceability/CTA";
+import LandingPage from "@/components/Traceability/LandingPage";
 import Sustainability from "@/components/Traceability/Sustainability";
 import Traceability from "@/components/Traceability/Traceability";
+import React from "react";
 
 type Props = {};
 

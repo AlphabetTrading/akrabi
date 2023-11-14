@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import CustomCountUp from "../common/CustomCountUp";
+import Slider from "react-slick";
 
 type Props = {};
 
@@ -53,13 +55,7 @@ const Regions = (props: Props) => {
 
   return (
     <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-10">
-      <div className="md:col-span-7 bg-secondary flex flex-col gap-y-2 p-16 px-20">
-        <h1 className="uppercase text-6xl text-white font-semibold">
-          {regions[activeIndex].name} Region
-        </h1>
-        <div className="w-full md:w-3/5 text-white py-2">
-          <h1 className="font-light">{regions[activeIndex].description}</h1>
-        </div>
+      <div className="md:col-span-7 min-h-[85vh] bg-secondary flex flex-col gap-y-2 p-5 px-6 xl:p-16 xl:px-20">
         <div className="flex items-end text-white">
           <h1 className="text-5xl">0{activeIndex + 1}</h1>
           <h1 className="text-2xl">/05</h1>
@@ -104,7 +100,13 @@ const Regions = (props: Props) => {
             </svg>
           </div>
         </div>
-        <div className="flex justify-center h-[580px]">
+        <h1 className="uppercase text-4xl lg:text-5xl xl:text-6xl text-white font-semibold">
+          {regions[activeIndex].name} Region
+        </h1>
+        <div className="w-full md:w-3/5 text-white py-2">
+          <h1 className="font-light">{regions[activeIndex].description}</h1>
+        </div>
+        <div className=" flex justify-center h-[300px] md:h-[400px] xl:h-[580px]">
           <img
             src={regions[activeIndex].image}
             alt={`${regions[activeIndex].name}_maps`}
@@ -112,12 +114,14 @@ const Regions = (props: Props) => {
           />
         </div>
       </div>
-      <div className="md:col-span-3 bg-primary flex flex-col gap-y-5 p-16 px-20">
+      <div className="md:col-span-3 bg-primary flex flex-col gap-y-3 xl:gap-y-5 p-5 px-6 xl:p-16 xl:px-20">
         <div className="flex flex-col">
           <h1 className="uppercase text-3xl text-[#414141] font-semibold">
             Farmers
           </h1>
-          <h1 className="text-8xl text-[#414141] font-bold">1000+</h1>
+          <h1 className="text-6xl  md:text-7xl xl:text-8xl text-[#414141] font-bold">
+            <CustomCountUp end={1000} duration={10} />+
+          </h1>
           <h1 className="text-sm text-[#414141]/60 mt-2">
             Our farmers nurture each coffee plant with dedication, ensuring
             every cup carries their passion.
@@ -130,7 +134,9 @@ const Regions = (props: Props) => {
           <h1 className="uppercase text-3xl text-[#414141] font-semibold">
             Farms
           </h1>
-          <h1 className="text-8xl text-[#414141] font-bold">35</h1>
+          <h1 className="text-6xl md:text-7xl xl:text-8xl text-[#414141] font-bold">
+            <CustomCountUp end={35} duration={10} />+
+          </h1>
           <h1 className="text-sm text-[#414141]/60  mt-2">
             Discover the heart of our coffee journey, where the magic begins
             amidst nature&apos;s beauty.
@@ -143,7 +149,9 @@ const Regions = (props: Props) => {
           <h1 className="uppercase text-3xl text-[#414141] font-semibold">
             Hectares
           </h1>
-          <h1 className="text-8xl text-[#414141] font-bold">62</h1>
+          <h1 className="text-6xl  md:text-7xl xl:text-8xl text-[#414141] font-bold">
+            <CustomCountUp end={91} duration={10} />+
+          </h1>
           <h1 className="text-sm text-[#414141]/60  mt-2">
             Across expansive fertile land, our coffee thrives, soaking up the
             richness of the earth to bring you a truly exceptional experience.

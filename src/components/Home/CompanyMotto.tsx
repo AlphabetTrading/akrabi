@@ -6,11 +6,11 @@ type Props = {};
 
 const CompanyMotto = (props: Props) => {
   return (
-    <div className="flex items-center justify-center py-16 w-11/12">
-      <div className="w-full flex justify-center">
-        <div className="w-3/4 flex flex-col items-center gap-y-4">
-          <div className="flex items-start gap-x-5">
-            <img src="/icons/transparency.svg" alt="" />
+    <div className="flex flex-col lg:flex-row gap-y-5 items-center justify-start py-16 w-full">
+      <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="w-11/12 xl:w-3/4 flex flex-col items-center gap-y-4">
+          <div className="flex items-start gap-x-3 xl:gap-x-5">
+            <img className="h-16 w-16" src="/icons/transparency.svg" alt="" />
             <div className="flex flex-col gap-y-3">
               <h1 className="font-semibold uppercase text-2xl">Transparency</h1>
               <p>
@@ -24,11 +24,11 @@ const CompanyMotto = (props: Props) => {
               </button>
             </div>
           </div>
-          <h1>
+          <h1 className="overflow-hidden w-screen">
             .....................................................................................................................................................................................
           </h1>
-          <div className="flex items-start gap-x-5">
-            <img src="/icons/traceability.svg" alt="" />
+          <div className="flex items-start gap-x-3 xl:gap-x-5">
+            <img className="h-16 w-16" src="/icons/traceability.svg" alt="" />
             <div className="flex flex-col gap-y-3">
               <h1 className="font-semibold uppercase text-2xl">Traceability</h1>
               <p>
@@ -42,12 +42,12 @@ const CompanyMotto = (props: Props) => {
               </button>
             </div>
           </div>
-          <h1>
+          <h1 className="overflow-hidden w-screen">
             ....................................................................................................................................................................................
           </h1>
 
-          <div className="flex items-start gap-x-5">
-            <img src="/icons/sustainability.svg" alt="" />
+          <div className="flex items-start gap-x-3 xl:gap-x-5">
+            <img className="h-16 w-16" src="/icons/sustainability.svg" alt="" />
             <div className="flex flex-col gap-y-3">
               <h1 className="font-semibold uppercase text-2xl">
                 Sustainability
@@ -65,21 +65,19 @@ const CompanyMotto = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="w-5/6 flex flex-col gap-y-2">
-        <h1 className="text-5xl">
+      <div className="w-11/12 lg:w-5/6 flex flex-col gap-y-2">
+        <h1 className="text-3xl md:text-4xl xl:text-5xl">
           <span className="font-semibold">The Green Trail</span>: Transparency,
           Traceability, and Sustainability in Coffee Export
         </h1>
-        <br />
         {/* <SubTitle text="Every step of the process" /> */}
-        <br />
-        <p className="w-2/3">
+        <p className="w-11/12 lg:w-2/3">
           In the green coffee export industry, transparency, traceability, and
           sustainability are essential. They ensure accountability across
           social, environmental, and economic aspects of production, fostering
           an ethically managed supply chain.
         </p>
-        <p className="w-2/3">
+        <p className="w-11/12 lg:w-2/3">
           Transparency builds trust through open communication, traceability
           connects consumers to the coffee&apos;s journey, and sustainability
           reflects a commitment to environmentally friendly practices and fair

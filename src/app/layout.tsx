@@ -1,11 +1,14 @@
 "use client";
-import "./globals.css";
-import { Inter } from "next/font/google";
 import { useEffect } from "react";
+import "./globals.css";
 
 import { Barlow_Condensed } from "next/font/google";
-import Footer from "@/components/common/Footer";
+
+import Cursor from "@/components/common/Cursor";
+import ScrollToTop from "@/components/common/ScrollToTop";
 import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
+import clsx from "clsx";
 
 const barlow_condensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -25,10 +28,17 @@ export default function RootLayout({
   }, []);
   return (
     <html lang="en">
-      <body className={barlow_condensed.className}>
-        <Navbar />
+      <body
+        className={clsx(
+          barlow_condensed.className,
+          "w-screen overflow-x-hidden",
+        )}
+      >
+        <Cursor />
+        {/* <Navbar /> */}
         {children}
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

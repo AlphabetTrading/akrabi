@@ -3,6 +3,7 @@
 import CompanyMotto from "@/components/Home/CompanyMotto";
 import LandingPage from "@/components/Home/LandingPage";
 import Process from "@/components/Home/Process";
+import Sustainability from "@/components/traceability/Sustainability";
 import Regions from "@/components/Home/Regions";
 import Testimonials from "@/components/Home/Testimonials";
 import Image from "next/image";
@@ -14,8 +15,8 @@ export default function Home() {
       <Process />
       <Regions />
       <CompanyMotto />
-      {/* <Sustainability/>
-      <Clients/> */}
+      <Sustainability />
+      {/* <Clients/> */}
       {/* <Testimonials /> */}
       {/* <FAQs/> */}
     </main>

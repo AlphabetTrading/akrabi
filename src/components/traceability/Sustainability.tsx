@@ -29,13 +29,13 @@ const keyPoints = [
 ];
 const Sustainability = (props: Props) => {
   return (
-    <div className="w-full flex flex-col items-center py-20 ">
-      <div className="w-5/6 flex flex-col gap-y-8">
-        <div className="flex items-center gap-x-20">
+    <div className="w-full flex flex-col items-center py-5 xl:py-20 ">
+      <div className="w-11/12 lg:w-5/6 flex flex-col gap-y-8">
+        <div className="flex flex-col lg:flex-row gap-y-5 items-center lg:gap-x-20">
           <h1 className="uppercase text-2xl font-semibold">
             Social Responsibility
           </h1>
-          <p className="text-lg">
+          <p className="lg:text-lg text-center lg:text-start">
             Our green coffee production reflects our unwavering commitment to
             social responsibility. We prioritize fair wages, safe working
             conditions, and community development for coffee farmers. By
@@ -44,8 +44,8 @@ const Sustainability = (props: Props) => {
             in the journey of our green coffee exports
           </p>
         </div>
-        <div className="bg-primary flex mt-16">
-          <div className="w-1/2 relative">
+        <div className="bg-primary flex flex-col lg:flex-row xl:mt-16">
+          <div className="border w-full lg:w-1/2 relative">
             <Image
               className="object-cover"
               fill
@@ -53,8 +53,8 @@ const Sustainability = (props: Props) => {
               alt=""
             />
           </div>
-          <div className="w-1/2 flex flex-col justify-center gap-y-6 p-10 py-16">
-            <h1 className="w-5/6 font-semibold text-xl">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center gap-y-6 p-5 lg:p-10 xl:py-16">
+            <h1 className="w-full xl:w-5/6 font-semibold text-xl">
               Did you hear about the EU regulation aiming to minimize
               deforestation and forest degradation practices?
             </h1>
@@ -77,10 +77,13 @@ const Sustainability = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between mt-16">
+        <div className="flex flex-col xl:flex-row justify-between mt-5 xl:mt-16">
           {keyPoints.map((point: any, index: number) => {
             return (
-              <div className="w-[30%] flex flex-col gap-y-6" key={index}>
+              <div
+                className="w-full xl:w-[30%] flex flex-col gap-y-6"
+                key={index}
+              >
                 <h1 className="font-semibold text-xl uppercase">
                   {point.title}
                 </h1>

@@ -1,0 +1,63 @@
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/** custom scrollbars */
+
+.lenis.lenis-smooth::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0.25rem;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-thumb:active {
+  background: #333;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-button {
+  display: none;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-button:start {
+  display: none;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-button:end {
+  display: none;
+}
+
+.lenis.lenis-smooth::-webkit-scrollbar-button:horizontal {
+  display: none;
+}

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Title from "../common/Title";
 import SubTitle from "../common/SubTitle";

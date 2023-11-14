@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Testimonial from "./Testimonial";
 import { Testimony } from "../../../types/testimony";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

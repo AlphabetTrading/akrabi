@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 
 const CountUp: React.FC<{ end: number; duration: number }> = ({

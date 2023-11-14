@@ -1,6 +1,6 @@
 "use client";
 
-import ContactMap from "@/components/ContactUs/ContactMap";
+import ContactMap from "@/components/contactUs/ContactMap";
 import { Field, Form, Formik, FormikProps, useFormik } from "formik";
 import React from "react";
 import * as Yup from "yup";

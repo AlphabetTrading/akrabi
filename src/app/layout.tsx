@@ -23,7 +23,9 @@ export default function RootLayout({
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll({});
+      const locomotiveScroll = new LocomotiveScroll({
+        direction: "horizontal",
+      });
     })();
   }, []);
   return (

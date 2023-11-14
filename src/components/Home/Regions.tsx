@@ -1,7 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CustomCountUp from "../common/CustomCountUp";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 type Props = {};
 
@@ -46,75 +48,106 @@ const regions = [
 const Regions = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const goPrev = () => {
+    sliderRef.current?.slickPrev();
     setActiveIndex(activeIndex === 0 ? regions.length - 1 : activeIndex - 1);
   };
 
   const goNext = () => {
+    sliderRef.current?.slickNext();
     setActiveIndex(activeIndex === regions.length - 1 ? 0 : activeIndex + 1);
+  };
+  const sliderRef = useRef<any>(null);
+  const prevButton = useRef<HTMLDivElement>(null);
+  const nextButton = useRef<HTMLDivElement>(null);
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    autoplaySpeed: 2000,
+    autoplay: true,
+    afterChange: (index: number) => setActiveIndex(index),
+    arrows: false,
   };
 
   return (
     <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-10">
       <div className="md:col-span-7 min-h-[85vh] bg-secondary flex flex-col gap-y-2 p-5 px-6 xl:p-16 xl:px-20">
-        <div className="flex items-end text-white">
-          <h1 className="text-5xl">0{activeIndex + 1}</h1>
-          <h1 className="text-2xl">/05</h1>
-          <div
-            onClick={goPrev}
-            className="ml-5 mx-2 p-1 border border-white rounded-full"
-          >
-            <svg
-              width="20px"
-              height="20px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 7L10 12L15 17"
-                stroke="#ffffff"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+        <div className="flex justify-between md:justify-start items-end text-white">
+          <div className="w-20 flex items-baseline">
+            <h1 className="text-5xl">0{activeIndex + 1}</h1>
+            <h1 className="text-2xl">/05</h1>
           </div>
-          <div
-            onClick={goNext}
-            className="p-1 border border-white rounded-full"
-          >
-            <svg
-              width="20px"
-              height="20px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div className="flex items-baseline">
+            <div
+              ref={prevButton}
+              onClick={goPrev}
+              className="custom-prev-button ml-5 mx-2 p-1 border border-white rounded-full"
             >
-              <path
-                d="M10 7L15 12L10 17"
-                stroke="#ffffff"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 7L10 12L15 17"
+                  stroke="#ffffff"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div
+              ref={nextButton}
+              onClick={goNext}
+              className="custom-next-button p-1 border border-white rounded-full"
+            >
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 7L15 12L10 17"
+                  stroke="#ffffff"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
           </div>
         </div>
-        <h1 className="uppercase text-4xl lg:text-5xl xl:text-6xl text-white font-semibold">
-          {regions[activeIndex].name} Region
-        </h1>
-        <div className="w-full md:w-3/5 text-white py-2">
-          <h1 className="font-light">{regions[activeIndex].description}</h1>
-        </div>
-        <div className=" flex justify-center h-[300px] md:h-[400px] xl:h-[580px]">
-          <img
-            src={regions[activeIndex].image}
-            alt={`${regions[activeIndex].name}_maps`}
-            className="w-full h-full"
-          />
+
+        <div className=" w-full ">
+          <Slider ref={sliderRef} className="relative " {...settings}>
+            {regions.map((region) => (
+              <div key={region.id} className="flex flex-col gap-y-3">
+                <h1 className="uppercase text-4xl lg:text-5xl xl:text-6xl text-white font-semibold">
+                  {region.name} Region
+                </h1>
+                <div className="w-full md:w-3/5 min-h-[200px] text-white py-2">
+                  <h1 className="font-light">{region.description}</h1>
+                </div>
+                <div className=" flex justify-center h-[300px] md:h-[400px] xl:h-[580px]">
+                  <img
+                    src={region.image}
+                    alt={`${region.name}_maps`}
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
-      <div className="md:col-span-3 bg-primary flex flex-col gap-y-3 xl:gap-y-5 p-5 px-6 xl:p-16 xl:px-20">
+      <div className="md:col-span-3 bg-primary flex flex-col justify-center gap-y-3 xl:gap-y-5 p-5 px-6 xl:p-16 xl:px-20">
         <div className="flex flex-col">
           <h1 className="uppercase text-3xl text-[#414141] font-semibold">
             Farmers

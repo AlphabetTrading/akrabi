@@ -11,35 +11,35 @@ const regions = [
     name: "Yirgacheffe",
     description:
       "Yirgacheffe coffee is considered one of the best coffees in the world. The small town in Gedeo zone is well known for growing a distinctively floral and fruit toned coffee varieties. Our varieties include Kochere, Idido, Shashmene, Aricha and Konga",
-    image: "/images/yirgacheffe.svg",
+    image: "/images/home/yirgacheffe.svg",
   },
   {
     id: 2,
     name: "Guji",
     description:
       "Coffee has been the crucial product for Guji farmers for more than 500 years. This long tradition of coffee has led to Guji becoming one of the most sought after coffees in the world. The Guji coffee is an organically grown coffee that has flavors associated with dark chocolate, peaches, and nectarines. Our collection of Guji coffee includes, Hambela Wamena, Oda Shakiso, Dimtu, Ela farda, Bilbirsa, Kercha, Layu, Uraga, Dimtu",
-    image: "/images/guji.svg",
+    image: "/images/home/guji.svg",
   },
   {
     id: 3,
     name: "Sidamo",
     description:
       "Sidamo Coffee is a name associated with spice and citrus notes, crisp acidity, and a rich body. It’s also the major source of grade 1 and grade 2 coffee of Ethiopia. Sidamo coffee’s fame is a result the fertile highlands and lakes. Our selections include Bensa, Chire, Aroresa and Nensebo ",
-    image: "/images/sidamo.svg",
+    image: "/images/home/sidamo.svg",
   },
   {
     id: 4,
     name: "Gedeb",
     description:
       "Coffee from Gedeb district is known and loved for its fragrant & floral aroma, sweet & balanced taste and smooth acidity. We curate Chelchele, Chelbesa, Worka Sakaro and Banko Gotiti.",
-    image: "/images/gedeb.svg",
+    image: "/images/home/gedeb.svg",
   },
   {
     id: 5,
     name: "Limmu",
     description:
       "Limmu is a high-quality wet-processed (washed) Ethiopian coffee that exhibits a relatively low yet sharp acidity and well-knit structure. Many specialty roasters consider washed Limmu coffee from Ethiopia to be a premium gourmet coffee.",
-    image: "/images/limmu.svg",
+    image: "/images/home/limmu.svg",
   },
 ];
 

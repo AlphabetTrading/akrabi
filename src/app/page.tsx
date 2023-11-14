@@ -15,7 +15,7 @@ export default function Home() {
       <Process />
       <Regions />
       <CompanyMotto />
-      <Sustainability />
+      {/* <Sustainability /> */}
       {/* <Clients/> */}
       {/* <Testimonials /> */}
       {/* <FAQs/> */}

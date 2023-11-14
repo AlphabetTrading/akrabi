@@ -13,6 +13,18 @@
   mix-blend-mode: difference;
   z-index: 9999;
   border-color: #12c2e9;
+  will-change: transform;
+  transform-style: preserve-3d;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+}
+
+@media screen and (max-width: 767px) {
+  .mouse-cursor {
+    display: none;
+  }
 }
 
 .cursor-inner {

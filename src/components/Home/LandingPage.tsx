@@ -37,10 +37,8 @@ const LandingPage = (props: Props) => {
     });
   };
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     createAnimation();
   }, []);
-  gsap.registerPlugin(ScrollTrigger);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {

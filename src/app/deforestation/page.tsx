@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import LandingPage from "@/components/deforestation/LandingPage";
-import Concerns from "@/components/deforestation/Concerns";
-import Definition from "@/components/deforestation/Definition";
-import EURegulation from "@/components/deforestation/EURegulation";
-import Roles from "@/components/deforestation/Roles";
+import LandingPage from "@/components/Deforestation/LandingPage";
+import Concerns from "@/components/Deforestation/Concerns";
+import Definition from "@/components/Deforestation/Definition";
+import EURegulation from "@/components/Deforestation/EURegulation";
+import Roles from "@/components/Deforestation/Roles";
 
 type Props = {};
 

@@ -1,9 +1,9 @@
 "use client";
 
-import Bio from "@/components/producers/Bio";
-import Interview from "@/components/producers/Interview";
-import LandingPage from "@/components/producers/LandingPage";
-import Stats from "@/components/producers/Stats";
+import Bio from "@/components/Producers/Bio";
+import Interview from "@/components/Producers/Interview";
+import LandingPage from "@/components/Producers/LandingPage";
+import Stats from "@/components/Producers/Stats";
 import React from "react";
 
 type Props = {};

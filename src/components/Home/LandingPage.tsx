@@ -1,20 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import styles from "./landing_page.module.css";
 import clsx from "clsx";
 import Image from "next/image";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import useSplitWords from "@/hooks/splitLetters";
 import PronounceButton from "./PronounceAkraabi";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 type Props = {};
 const phrase: string =
   "Welcome to Akraabi, the hub of global coffee connections. We link passionate coffee producers directly to roasters worldwide, revolutionizing the green coffee trade. Explore exceptional beans, foster direct relationships, and redefine your coffee experience with us.";
 
 const LandingPage = (props: Props) => {
+  const mainRef = useRef<HTMLDivElement>(null);
   const { refs, splitWords } = useSplitWords({ phrase });
   const headerText = useRef(null);
   const container = useRef(null);
@@ -37,9 +39,30 @@ const LandingPage = (props: Props) => {
     gsap.registerPlugin(ScrollTrigger);
     createAnimation();
   }, []);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let tl = gsap.timeline();
+      tl.from(".landing-text", {
+        transform: "translateY(50%)",
+        duration: 2,
+        delay: 1,
+        ease: "expo.inOut",
+      });
+      tl.from(".landing-image", {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
+    }, mainRef);
+
+    return () => ctx.revert(); // cleanup
+  }, []);
 
   return (
     <div
+      ref={mainRef}
       data-scroll-section
       className={clsx(
         "bg-primary w-full min-h-screen flex flex-col items-center",
@@ -48,7 +71,7 @@ const LandingPage = (props: Props) => {
       <div
         ref={container}
         className={clsx(
-          "flex flex-col justify-center items-center pt-20 xl:pt-14 h-full ",
+          "landing-text flex flex-col justify-center items-center pt-20 xl:pt-14 h-full ",
           styles.headerContainer,
         )}
       >
@@ -94,15 +117,12 @@ const LandingPage = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="w-11/12 md:w-5/6 mb-16">
+      <div className="landing-image w-11/12 md:w-5/6 mb-16">
         <img
           className="w-full hidden md:flex h-[70vh]"
           src="/images/homepage.svg"
         />
-        <img
-          className="w-full h-[30vh] md:hidden"
-          src="/images/homepage_small.png"
-        />
+        <img className="w-full  md:hidden" src="/images/homepage_small.png" />
         {/* <div className={clsx(
           styles.imageContainer,
           "h-[80vh] w-full relative flex justify-center items-center"

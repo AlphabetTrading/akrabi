@@ -7,16 +7,18 @@ type Props = {};
 
 const Definition = (props: Props) => {
   return (
-    <div className="bg-secondary w-full h-fit flex flex-col items-center py-24">
-      <div className="w-5/6 flex items-center">
-        <div className="w-full flex flex-col px-16 items-center">
+    <div className="bg-secondary w-full h-fit flex flex-col items-center py-12 lg:py-24">
+      <div className="w-11/12 lg:w-5/6 flex items-center">
+        <div className="w-full flex flex-col px-5 lg:px-16 items-center">
           <div className="w-11/12 flex flex-col gap-y-4 text-white">
             <div className="flex items-center gap-x-2">
               <img src="/icons/farm-detail-check.svg" />
-              <h1 className="text-2xl uppercase font-semibold">Overview</h1>
+              <h1 className="text-lg lg:text-2xl uppercase font-semibold">
+                Overview
+              </h1>
             </div>
             <h1 className="text-5xl">What is Deforestation?</h1>
-            <p className="text-xl">
+            <p className="lg:text-xl">
               Deforestation, the widespread clearing of forests, is a critical
               global concern. In coffee production, it becomes particularly
               relevant due to its impact on the environment, wildlife, and local
@@ -31,7 +33,7 @@ const Definition = (props: Props) => {
             </p>
           </div>
         </div>
-        <div className="w-2/3 h-96 relative">
+        <div className="hidden lg:block w-2/3 h-96 relative">
           <Image fill src="/images/deforestation-landing-page.jpg" alt="" />
         </div>
       </div>

@@ -2,19 +2,39 @@
 
 import { GetCurrentYear } from "@/helpers/getCurrentYear";
 import Link from "next/link";
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Props = {};
 
 const Footer = (props: Props) => {
+  const footerRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    gsap.from(footerRef.current, {
+      scrollTrigger: {
+        // markers: true,
+        trigger: footerRef.current,
+        start: "-100% center",
+        end: "top end",
+        scrub: 1,
+      },
+      transform: "translateY(25%)",
+      // y: "-500px"
+      // duration:2
+    });
+  }, []);
+
   return (
-    <div className="w-full flex justify-center py-10">
+    <div ref={footerRef} className=" w-full flex justify-center py-10">
       <div className="w-11/12 lg:w-5/6 flex flex-col items-center">
         <div className="flex w-full justify-between gap-y-5 min-h-[200px] flex-col lg:flex-row">
           <div className="flex-3 flex-col justify-between h-full gap-y-3">
             <div className="flex flex-col w-2/3 leading-tight ">
               <h1 className="uppercase text-5xl font-semibold leading-tight my-1">
-                Akrabi<span className="text-[#FFB800]">.</span>
+                Akraabi<span className="text-[#FFB800]">.</span>
               </h1>
               <p className="text-lg text-text/70 leading-tight ">
                 <span className="font-semibold">

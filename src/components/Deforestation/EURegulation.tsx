@@ -6,13 +6,13 @@ type Props = {};
 
 const EURegulation = (props: Props) => {
   return (
-    <div className="w-full flex flex-col items-center py-24">
-      <div className="w-5/6 flex justify-end">
-        <div className="w-3/5 flex flex-col gap-y-4">
-          <h1 className="w-2/3 text-5xl font-semibold">
+    <div className="w-full flex flex-col items-center py-12 lg:py-24">
+      <div className="w-11/12 lg:w-5/6 flex justify-center lg:justify-end">
+        <div className="lg:w-3/5 flex flex-col gap-y-4">
+          <h1 className="w-4/5 lg:w-2/3 text-2xl lg:text-5xl font-semibold">
             The new EU Regulation on deforestation
           </h1>
-          <div className="w-5/6 flex flex-col gap-y-4 text-2xl">
+          <div className="w-11/12 lg:w-5/6 flex flex-col gap-y-4 lg:text-2xl">
             <p>
               The EU&apos;s new Deforestation Regulation is a groundbreaking
               piece of legislation that aims to reduce the EU&apos;s impact on

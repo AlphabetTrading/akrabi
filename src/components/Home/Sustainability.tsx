@@ -10,7 +10,7 @@ const Sustainability = (props: Props) => {
     <div className="w-full h-screen flex justify-center items-center relative">
       <Image
         fill
-        className="z-10"
+        className="z-10 object-cover object-center w-full h-full  "
         src="/images/home/sustainability.jpg"
         alt=""
       />
@@ -38,7 +38,7 @@ const Sustainability = (props: Props) => {
             </p>
             <div
               onClick={() => {
-                router.push("#");
+                router.push("/deforestation");
               }}
               className="w-fit border border-white px-4 lg:px-6 py-2 cursor-pointer"
             >

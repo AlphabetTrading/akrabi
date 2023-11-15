@@ -6,6 +6,8 @@ import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 
+gsap.registerPlugin(ScrollTrigger);
+
 type Props = {};
 
 const Footer = (props: Props) => {

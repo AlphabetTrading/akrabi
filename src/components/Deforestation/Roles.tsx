@@ -34,8 +34,10 @@ const roles = [
 const Roles = (props: Props) => {
   return (
     <div className="w-full flex flex-col items-center gap-y-6">
-      <div className="w-5/6 flex flex-col">
-        <h1 className="text-5xl font-semibold">Role of Coffee Production</h1>
+      <div className="w-11/12 lg:w-5/6 flex flex-col">
+        <h1 className="text-3xl lg:text-5xl font-semibold">
+          Role of Coffee Production
+        </h1>
       </div>
       <div className="w-full bg-secondary flex flex-col items-center">
         <div className="grid grid-cols-12">
@@ -43,16 +45,16 @@ const Roles = (props: Props) => {
             return (
               <div
                 key={index}
-                className="w-full col-span-6 flex flex-col items-center border border-dashed border-white py-16"
+                className="w-full col-span-12 lg:col-span-6 flex flex-col items-center border border-dashed border-white py-8 lg:py-16"
               >
-                <div className="w-2/3 flex flex-col text-white gap-y-4">
+                <div className="w-4/5 lg:w-2/3 flex flex-col text-white gap-y-4">
                   <div className="flex items-center gap-x-3">
                     <img src="/icons/farm-detail-check.svg" />
-                    <h1 className="text-2xl uppercase font-semibold">
+                    <h1 className="text-lg lg:text-2xl uppercase font-semibold">
                       {role.title}
                     </h1>
                   </div>
-                  <p className="text-xl">{role.description}</p>
+                  <p className="lg:text-xl">{role.description}</p>
                 </div>
               </div>
             );

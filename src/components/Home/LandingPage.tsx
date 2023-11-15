@@ -39,6 +39,26 @@ const LandingPage = (props: Props) => {
   useEffect(() => {
     createAnimation();
   }, []);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let tl = gsap.timeline();
+      tl.from(".landing-text", {
+        transform: "translateY(50%)",
+        duration: 2,
+        delay: 1,
+        ease: "expo.inOut",
+      });
+      tl.from(".landing-image", {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
+    }, mainRef);
+
+    return () => ctx.revert(); // cleanup
+  }, []);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {

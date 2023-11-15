@@ -10,19 +10,12 @@ const Sustainability = (props: Props) => {
     <div className="w-full h-screen flex justify-center items-center relative">
       <Image
         fill
-<<<<<<< HEAD
+
         className="z-10 object-cover object-center w-full h-full  "
         src="/images/home/sustainability.jpg"
         alt=""
       />
       <div className="absolute inset-0 bg-black/40 z-20"></div>
-=======
-        className="z-10"
-        src="/images/home/sustainability.jpg"
-        alt=""
-      />
-      <div className="absolute inset-0 bg-black/20 z-20"></div>
->>>>>>> cf0e574 (feat(web): add sustainability section to homepage)
       <div className="w-full flex flex-col items-center gap-y-6 z-20">
         <div className="w-11/12 lg:w-5/6 h-5/6 flex flex-col gap-y-6 text-white">
           <h1 className="w-[95%] lg:w-2/3 text-3xl lg:text-6xl font-semibold">

@@ -3,19 +3,20 @@
 import CompanyMotto from "@/components/Home/CompanyMotto";
 import LandingPage from "@/components/Home/LandingPage";
 import Process from "@/components/Home/Process";
-import Sustainability from "@/components/traceability/Sustainability";
 import Regions from "@/components/Home/Regions";
-import Testimonials from "@/components/Home/Testimonials";
-import Image from "next/image";
+import Sustainability from "@/components/Home/Sustainability";
 
 export default function Home() {
   return (
-    <main className="flex w-full min-h-screen flex-col items-center justify-between">
+    <main
+      data-scroll-container
+      className="flex w-full min-h-screen flex-col items-center justify-between"
+    >
       <LandingPage />
       <Process />
       <Regions />
       <CompanyMotto />
-      {/* <Sustainability /> */}
+      <Sustainability />
       {/* <Clients/> */}
       {/* <Testimonials /> */}
       {/* <FAQs/> */}

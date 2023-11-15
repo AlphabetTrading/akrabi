@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import NavbarMenu from "./NavbarMenu";

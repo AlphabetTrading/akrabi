@@ -1,29 +1,108 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./landing_page.module.css";
 import clsx from "clsx";
 import Image from "next/image";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import useSplitWords from "@/hooks/splitLetters";
+import PronounceButton from "./PronounceAkraabi";
 
 type Props = {};
+const phrase: string =
+  "Welcome to Akraabi, the hub of global coffee connections. We link passionate coffee producers directly to roasters worldwide, revolutionizing the green coffee trade. Explore exceptional beans, foster direct relationships, and redefine your coffee experience with us.";
 
 const LandingPage = (props: Props) => {
+  const { refs, splitWords } = useSplitWords({ phrase });
+  const headerText = useRef(null);
+  const container = useRef(null);
+  const createAnimation = () => {
+    gsap.to(refs.current, {
+      scrollTrigger: {
+        trigger: container.current,
+        scrub: true,
+        start: `top`,
+        // end: "bottom",
+        end: `+=${window.innerHeight}`,
+      },
+      color: "black",
+      fontWeight: 600,
+      ease: "none",
+      stagger: 0.1,
+    });
+  };
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    createAnimation();
+  }, []);
+
   return (
-    <div className="bg-primary w-full h-[80vh] xl:min-h-screen flex flex-col justify-center items-center py-5 xl:py-8">
-      <h1 className="text-6xl md:text-7xl xl:text-8xl uppercase font-bold mt-10">
-        Akraabi
-      </h1>
-      <h1 className="text-text text-2xl">[ækræ.bi]</h1>
-      <div className="w-11/12 md:w-2/3 2xl:w-1/2 pt-4">
-        <p className="text-text/60 md:text-xl xl:text-2xl text-center leading-5">
-          Welcome to Akraabi, the hub of global coffee connections. We link
+    <div
+      data-scroll-section
+      className={clsx(
+        "bg-primary w-full min-h-screen flex flex-col items-center",
+      )}
+    >
+      <div
+        ref={container}
+        className={clsx(
+          "flex flex-col justify-center items-center pt-20 xl:pt-14 h-full ",
+          styles.headerContainer,
+        )}
+      >
+        <h1
+          data-scroll
+          data-scroll-speed="0.05"
+          data-scroll-position="top"
+          data-scroll-direction="horizontal"
+          className="text-6xl md:text-7xl xl:text-8xl uppercase font-bold mt-10"
+        >
+          Akraabi
+        </h1>
+        <h1
+          data-scroll
+          data-scroll-speed="0.01"
+          data-scroll-position="top"
+          data-scroll-direction="horizontal"
+          className="text-text text-2xl flex items-center gap-x-2"
+        >
+          <span>[ækræ.bi]</span>
+          <PronounceButton audioPath="/audio/akraabi.mp3" />{" "}
+        </h1>
+        <div
+          className={clsx(
+            "flex flex-col max-h-32 justify-center items-center !w-4/5 md:!w-2/3 my-5",
+            // styles.headerText
+          )}
+        >
+          <div
+            ref={headerText}
+            className={clsx(
+              // "flex flex-col max-h-32 justify-center items-center !w-4/5 md:!w-2/3 my-5",
+              "flex justify-center max-h-[150px] overflow-y-hidden flex-wrap text-text/60 md:text-xl xl:text-2xl text-center leading-5",
+              styles.headerText,
+            )}
+          >
+            {/* Welcome to Akraabi, the hub of global coffee connections. We link
           passionate coffee producers directly to roasters worldwide,
           revolutionizing the green coffee trade. Explore exceptional beans,
           foster direct relationships, and redefine your coffee experience with
-          us.
-        </p>
+          us. */}
+            {splitWords()}
+          </div>
+        </div>
       </div>
-      <div className="w-11/12 md:w-5/6">
-        <img className="w-full" src="/images/homepage.svg" />
+      <div className="w-11/12 md:w-5/6 mb-16">
+        <img
+          className="w-full hidden md:flex h-[70vh]"
+          src="/images/homepage.svg"
+        />
+        <img
+          className="w-full h-[30vh] md:hidden"
+          src="/images/homepage_small.png"
+        />
         {/* <div className={clsx(
           styles.imageContainer,
           "h-[80vh] w-full relative flex justify-center items-center"
@@ -52,16 +131,6 @@ const LandingPage = (props: Props) => {
           </div>
         </div> */}
       </div>
-      {/* <div className="flex flex-col gap-y-1 border items-start">
-        <img className="w-8" src="/icons/quotes.svg" />
-        <p className="w-1/3">
-          Lorem ipsum dolor sit amet consectetur. Massa rhoncus cursus iaculis
-          turpis egestas egestas sem. Neque ligula vel id varius imperdiet
-          pellentesque. Ullamcorper amet dignissim volutpat tortor lobortis.
-          Volutpat venenatis lacinia ornare risus ut.
-        </p>
-        <h1>-Lorem Ipsum</h1>
-      </div> */}
     </div>
   );
 };

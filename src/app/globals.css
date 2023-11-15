@@ -12,6 +12,13 @@
 @import url("../styles/custom_cursor.css");
 @import url("../styles/scroll_to_top.css");
 
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  min-width: 100vw;
+  position: relative;
+}
+
 .testimonials .item {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);

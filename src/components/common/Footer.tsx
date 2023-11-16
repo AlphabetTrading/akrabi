@@ -5,12 +5,14 @@ import Link from "next/link";
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {};
 
 const Footer = (props: Props) => {
+  const router = useRouter();
   const footerRef = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     gsap.from(footerRef.current, {
@@ -29,18 +31,23 @@ const Footer = (props: Props) => {
 
   return (
     <div ref={footerRef} className=" w-full flex justify-center py-10">
-      <div className="w-11/12 lg:w-5/6 flex flex-col items-center">
-        <div className="flex w-full justify-between gap-y-5 min-h-[200px] flex-col lg:flex-row">
+      <div className="w-11/12 lg:w-5/6 flex flex-col items-center lg:items-start">
+        <div className="flex flex-col lg:flex-row lg:items-center w-full gap-y-5 min-h-[200px]">
           <div className="flex-3 flex-col justify-between h-full gap-y-3">
             <div className="flex flex-col w-2/3 leading-tight ">
-              <h1 className="uppercase text-5xl font-semibold leading-tight my-1">
+              <h1
+                onClick={() => {
+                  router.push("/");
+                }}
+                className="uppercase text-5xl font-semibold leading-tight my-1"
+              >
                 Akraabi<span className="text-[#FFB800]">.</span>
               </h1>
               <p className="text-lg text-text/70 leading-tight ">
                 <span className="font-semibold">
                   Green Coffee, Global Reach
                 </span>
-                : Elevate your brew with ugs
+                : Elevate your brew with us
               </p>
             </div>
             <ul className="flex items-center gap-x-3 h-10 my-3">
@@ -82,43 +89,43 @@ const Footer = (props: Props) => {
             </ul>
           </div>
           <div className=" flex-9 flex justify-center items-center">
-            <div className="grid w-full grid-cols-2 gap-y-3 lg:flex flex-col xl:flex-row lg:gap-x-16">
+            <div className="grid w-full grid-cols-2 gap-y-5 lg:flex flex-col xl:flex-row lg:gap-x-20">
               <div className="flex flex-col gap-y-2">
-                <h1 className="text-2xl font-semibold mb-3">Quick Links</h1>
+                <h1 className="text-2xl font-semibold">Quick Links</h1>
                 <ul className="text-xl">
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/">Home</Link>
                   </li>
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
-                    <Link href="/producers">Producers</Link>
+                    <Link href="/#">Producers</Link>
                   </li>
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
-                    <Link href="/farms">Farms</Link>
+                    <Link href="/#">Farms</Link>
                   </li>
                 </ul>
               </div>
               <div className="flex flex-col gap-y-2">
-                <h1 className="text-2xl font-semibold mb-3">Resources</h1>
+                <h1 className="text-2xl font-semibold">Resources</h1>
                 <ul className="text-xl">
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
-                    <Link href="/traceability">Traceability</Link>
+                    <Link href="/#">Traceability</Link>
                   </li>
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/deforestation">Deforestation</Link>
                   </li>
-                  <li className="hover:scale-105 cursor-pointer transition-all duration-200">
-                    <Link href="/sustainability">Sustainability</Link>
-                  </li>
+                  {/* <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                    <Link href="/#">Sustainability</Link>
+                  </li> */}
                 </ul>
               </div>
               <div className="flex flex-col gap-y-2">
-                <h1 className="text-2xl font-semibold mb-3">About</h1>
+                <h1 className="text-2xl font-semibold">About</h1>
                 <ul className="text-xl">
                   {/* <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                   <Link href="/about-us">About Us</Link>
                 </li> */}
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
-                    <Link href="/contact-us">Contact Us</Link>
+                    <Link href="/#">Contact Us</Link>
                   </li>
                 </ul>
               </div>

@@ -1,0 +1,103 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-rows: 0fr 0.4fr 0.5fr 0.4fr 0fr;
+  gap: 25px 20px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". First ."
+    "Second First Fourth"
+    "Third First Fourth"
+    "Third First Fifth"
+    ". First .";
+}
+.container_full {
+  display: none;
+}
+
+.container div {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: "#00ff00";
+}
+
+.container_full div {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: "#ff0000";
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    display: none;
+  }
+  .container_full {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr;
+    grid-template-rows: 0fr 0.6fr 0.7fr 0.6fr 0fr;
+    gap: 50px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . First . ."
+      ". Second First Fourth ."
+      "Sixth Third First Fourth Seventh"
+      ". Third First Fifth ."
+      ". . First . .";
+  }
+}
+
+.Second {
+  position: relative;
+  grid-area: Second;
+}
+
+.Third {
+  position: relative;
+  grid-area: Third;
+}
+
+.Fourth {
+  position: relative;
+  grid-area: Fourth;
+}
+
+.Fifth {
+  position: relative;
+  grid-area: Fifth;
+}
+
+.Sixth {
+  position: relative;
+  grid-area: Sixth;
+}
+
+.Seventh {
+  position: relative;
+  grid-area: Seventh;
+}
+
+.First {
+  position: relative;
+  grid-area: First;
+}
+
+.headerText {
+  display: flex;
+  flex-wrap: wrap;
+  /* overflow-y: hidden; */
+}
+
+.headerText p {
+  margin-right: 5px;
+  text-align: center !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.headerText span {
+  /* opacity: 0.5; */
+  /* color: rgba(0, 0, 0, 0); */
+}

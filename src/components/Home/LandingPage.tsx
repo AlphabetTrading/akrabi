@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
-import styles from "./landing_page.module.css";
+import styles from "./gallery.module.css";
 import clsx from "clsx";
 import Image from "next/image";
 import gsap from "gsap";
 import useSplitWords from "@/hooks/splitLetters";
 import PronounceButton from "./PronounceAkraabi";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Gallery from "./Gallery";
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {};
@@ -118,38 +119,7 @@ const LandingPage = (props: Props) => {
         </div>
       </div>
       <div className="landing-image w-11/12 md:w-5/6 mb-16">
-        <img
-          className="w-full hidden md:flex h-[70vh]"
-          src="/images/homepage.svg"
-        />
-        <img className="w-full  md:hidden" src="/images/homepage_small.png" />
-        {/* <div className={clsx(
-          styles.imageContainer,
-          "h-[80vh] w-full relative flex justify-center items-center"
-        )}>
-          <div className={styles.Two}>
-            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
-          </div>
-          <div className={styles.One}>
-            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
-
-          </div>
-          <div className={styles.Three}>
-            <Image alt="image three" fill objectFit="cover" src="/images/producers-photo.svg" />
-          </div>
-          <div className={styles.Four}>
-            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
-          </div>
-          <div className={styles.Five}>
-            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
-          </div>
-          <div className={styles.Six}>
-            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
-          </div>
-          <div className={styles.Seven}>
-            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
-          </div>
-        </div> */}
+        <Gallery />
       </div>
     </div>
   );

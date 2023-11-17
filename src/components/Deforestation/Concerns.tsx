@@ -44,9 +44,9 @@ const concerns = [
 
 const Concerns = (props: Props) => {
   return (
-    <div className="w-full flex flex-col items-center py-32">
-      <div className="w-5/6 flex flex-col gap-y-8">
-        <h1 className="text-5xl font-semibold capitalize text-black">
+    <div className="w-full flex flex-col items-center py-16 lg:py-32">
+      <div className="w-11/12 lg:w-5/6 flex flex-col gap-y-8">
+        <h1 className="text-3xl lg:text-5xl font-semibold capitalize text-black">
           Why is it a significant concern?
         </h1>
         <div className="grid grid-cols-12 gap-8">
@@ -54,7 +54,7 @@ const Concerns = (props: Props) => {
             return (
               <div
                 key={index}
-                className="bg-[#EEEEEE] col-span-12 md:col-span-6 xl:col-span-4 h-[420px] flex flex-col justify-between p-6 px-8 rounded-2xl"
+                className="bg-[#EEEEEE] col-span-12 md:col-span-6 xl:col-span-4 h-96 lg:h-[420px] flex flex-col justify-between p-6 px-8 rounded-2xl"
               >
                 <div className="">
                   <h1 className="text-3xl mb-12">0{concern.id}</h1>
@@ -62,11 +62,13 @@ const Concerns = (props: Props) => {
                 <div className="h-full flex flex-col justify-between">
                   <div className="flex items-center gap-x-3">
                     <img src="/icons/farm-detail-check.svg" />
-                    <h1 className="text-2xl font-semibold">{concern.title}</h1>
+                    <h1 className="text-lg lg:text-2xl font-semibold">
+                      {concern.title}
+                    </h1>
                   </div>
                   <div>
                     <div className="w-1/2 border-black border-dashed border-t-2 py-2"></div>
-                    <p className="text-xl">{concern.description}</p>
+                    <p className="lg:text-xl">{concern.description}</p>
                   </div>
                 </div>
               </div>

@@ -3,6 +3,7 @@
 import React from "react";
 import Title from "../common/Title";
 import SubTitle from "../common/SubTitle";
+import Steps from "./Steps";
 
 type Props = {};
 
@@ -11,7 +12,7 @@ const Process = (props: Props) => {
     <div className="w-full h-full flex justify-center">
       <div className="w-11/12 grid grid-cols-1 md:grid-cols-10 py-8 xl:py-16 gap-x-4 gap-y-6 justify-between items-center">
         <div className="md:col-span-3 flex flex-col gap-y-2 px-6">
-          <img src="/images/every-step.png" />
+          <Steps />
         </div>
         <div className="md:col-span-7 flex flex-col xl:gap-y-5 px-4 xl:px-16">
           <div className="w-full grid grid-cols-1 gap-y-5 xl:gap-y-8">

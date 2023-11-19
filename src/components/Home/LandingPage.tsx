@@ -118,6 +118,35 @@ const LandingPage = (props: Props) => {
       </div>
       <div className="landing-image w-11/12 md:w-5/6 mb-16">
         <Gallery />
+        <img className="w-full hidden md:flex" src="/images/homepage.png" />
+        <img className="w-full  md:hidden" src="/images/homepage-small.png" />
+        {/* <div className={clsx(
+          styles.imageContainer,
+          "h-[80vh] w-full relative flex justify-center items-center"
+        )}>
+          <div className={styles.Two}>
+            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
+          </div>
+          <div className={styles.One}>
+            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
+
+          </div>
+          <div className={styles.Three}>
+            <Image alt="image three" fill objectFit="cover" src="/images/producers-photo.svg" />
+          </div>
+          <div className={styles.Four}>
+            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
+          </div>
+          <div className={styles.Five}>
+            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
+          </div>
+          <div className={styles.Six}>
+            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
+          </div>
+          <div className={styles.Seven}>
+            <Image alt="image two" fill objectFit="cover" src="/images/producers-photo.svg" />
+          </div>
+        </div> */}
       </div>
     </div>
   );

@@ -29,13 +29,8 @@ export default function RootLayout({
     })();
   }, []);
   return (
-    <html lang="en">
-      <body
-        className={clsx(
-          barlow_condensed.className,
-          "w-screen overflow-x-hidden",
-        )}
-      >
+    <html lang="en" className="w-full flex flex-col items-center">
+      <body className={clsx(barlow_condensed.className)}>
         <Cursor />
         {/* <Navbar /> */}
         {children}

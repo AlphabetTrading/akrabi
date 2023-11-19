@@ -118,11 +118,8 @@ const LandingPage = (props: Props) => {
         </div>
       </div>
       <div className="landing-image w-11/12 md:w-5/6 mb-16">
-        <img
-          className="w-full hidden md:flex h-[70vh]"
-          src="/images/homepage.svg"
-        />
-        <img className="w-full  md:hidden" src="/images/homepage_small.png" />
+        <img className="w-full hidden md:flex" src="/images/homepage.png" />
+        <img className="w-full  md:hidden" src="/images/homepage-small.png" />
         {/* <div className={clsx(
           styles.imageContainer,
           "h-[80vh] w-full relative flex justify-center items-center"

@@ -14,7 +14,7 @@ const Sustainability = (props: Props) => {
         src="/images/home/sustainability.jpg"
         alt=""
       />
-      <div className="absolute inset-0 bg-black/20 z-20"></div>
+      <div className="absolute inset-0 bg-black/40 z-20"></div>
       <div className="w-full flex flex-col items-center gap-y-6 z-20">
         <div className="w-11/12 lg:w-5/6 h-5/6 flex flex-col gap-y-6 text-white">
           <h1 className="w-[95%] lg:w-2/3 text-3xl lg:text-6xl font-semibold">

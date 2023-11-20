@@ -8,7 +8,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import useSplitWords from "@/hooks/splitLetters";
 import PronounceButton from "./PronounceAkraabi";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/all";
 import Gallery from "./Gallery";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +17,6 @@ const phrase: string =
   "Welcome to Akraabi, the hub of global coffee connections. We link passionate coffee producers directly to roasters worldwide, revolutionizing the green coffee trade. Explore exceptional beans, foster direct relationships, and redefine your coffee experience with us.";
 
 const LandingPage = (props: Props) => {
-  gsap.registerPlugin(ScrollTrigger);
   const mainRef = useRef<HTMLDivElement>(null);
   const { refs, splitWords } = useSplitWords({ phrase });
   const headerText = useRef(null);
@@ -46,25 +45,6 @@ const LandingPage = (props: Props) => {
       let tl = gsap.timeline();
       tl.from(".landing-text", {
         yPercent: 50,
-        duration: 2,
-        delay: 1,
-        ease: "expo.inOut",
-      });
-      tl.from(".landing-image", {
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      });
-    }, mainRef);
-
-    return () => ctx.revert(); // cleanup
-  }, []);
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      let tl = gsap.timeline();
-      tl.from(".landing-text", {
-        transform: "translateY(50%)",
         duration: 2,
         delay: 1,
         ease: "expo.inOut",

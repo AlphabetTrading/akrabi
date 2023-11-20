@@ -4,7 +4,6 @@ import { GetCurrentYear } from "@/helpers/getCurrentYear";
 import Link from "next/link";
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
 
 type Props = {};

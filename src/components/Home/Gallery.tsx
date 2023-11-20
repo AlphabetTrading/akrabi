@@ -8,15 +8,12 @@ type Props = {};
 const Gallery = (props: Props) => {
   return (
     <div>
-      {/* <img
-        className="w-full flex lg:hidden h-[40vh]"
-        src="/images/homepage_small.svg"
-      />
       <img
-        className="w-full hidden md:flex h-[70vh]"
-        src="/images/homepage.svg"
-      /> */}
-      <div
+        className="w-full flex lg:hidden "
+        src="/images/homepage-small.png"
+      />
+      <img className="w-full hidden lg:flex " src="/images/homepage.png" />
+      {/* <div
         className={clsx(
           styles.container_full,
           "h-[80vh] hidden w-full relative lg:flex justify-center items-center",
@@ -113,7 +110,7 @@ const Gallery = (props: Props) => {
             src="/images/home/landing_page/seventh.png"
           />
         </div>
-      </div>
+      </div> */}
       {/* <div
         className={clsx(
           styles.container,

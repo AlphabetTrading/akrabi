@@ -17,6 +17,7 @@ const phrase: string =
   "Welcome to Akraabi, the hub of global coffee connections. We link passionate coffee producers directly to roasters worldwide, revolutionizing the green coffee trade. Explore exceptional beans, foster direct relationships, and redefine your coffee experience with us.";
 
 const LandingPage = (props: Props) => {
+  gsap.registerPlugin(ScrollTrigger);
   const mainRef = useRef<HTMLDivElement>(null);
   const { refs, splitWords } = useSplitWords({ phrase });
   const headerText = useRef(null);
@@ -37,10 +38,27 @@ const LandingPage = (props: Props) => {
     });
   };
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     createAnimation();
   }, []);
-  gsap.registerPlugin(ScrollTrigger);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let tl = gsap.timeline();
+      tl.from(".landing-text", {
+        yPercent: 50,
+        duration: 2,
+        delay: 1,
+        ease: "expo.inOut",
+      });
+      tl.from(".landing-image", {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
+    }, mainRef);
+
+    return () => ctx.revert(); // cleanup
+  }, []);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -72,7 +90,7 @@ const LandingPage = (props: Props) => {
       <div
         ref={container}
         className={clsx(
-          "landing-text flex flex-col justify-center items-center pt-20 xl:pt-14 h-full ",
+          "landing-text flex flex-col justify-center items-center pt-20 xl:pt-14",
           styles.headerContainer,
         )}
       >

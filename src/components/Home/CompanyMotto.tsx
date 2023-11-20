@@ -1,18 +1,40 @@
 "use client";
 
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Title from "../common/Title";
 import SubTitle from "../common/SubTitle";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import TraceabilityIcon from "@/icons/traceabilityIcon";
+import TransparencyIcon from "@/icons/transparencyIcon";
+import SustainabilityIcon from "@/icons/sustainabilityIcon";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Props = {};
 
 const CompanyMotto = (props: Props) => {
+  useLayoutEffect(() => {
+    gsap.to(".circle", {
+      rotation: 360,
+      duration: 3,
+      transformOrigin: "50% 50%",
+      scrollTrigger: {
+        trigger: ".motto-container",
+        // markers: true,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+  }, []);
+
   return (
-    <div className="flex flex-col lg:flex-row gap-y-16 items-center justify-start py-16 w-full">
+    <div className="motto-container flex flex-col lg:flex-row gap-y-16 items-center justify-start py-16 w-full">
       <div className="w-full lg:w-1/2 flex justify-center">
         <div className="w-11/12 xl:w-3/4 flex flex-col items-center gap-y-4">
           <div className="flex justify-center lg:justify-start items-start gap-x-3 xl:gap-x-5">
-            <img className="h-16 w-16" src="/icons/transparency.svg" alt="" />
+            <TransparencyIcon />
             <div className="flex flex-col w-3/4 gap-y-3 border-b-2 border-black border-dotted pb-10">
               <h1 className="font-semibold uppercase text-2xl">Transparency</h1>
               <p>
@@ -27,7 +49,7 @@ const CompanyMotto = (props: Props) => {
             </div>
           </div>
           <div className="flex justify-center lg:justify-start items-start gap-x-3 xl:gap-x-5">
-            <img className="h-16 w-16" src="/icons/traceability.svg" alt="" />
+            <TraceabilityIcon />
             <div className="flex flex-col w-3/4 gap-y-3 border-b-2 border-black border-dotted pb-10">
               <h1 className="font-semibold uppercase text-2xl">Traceability</h1>
               <p>
@@ -42,7 +64,8 @@ const CompanyMotto = (props: Props) => {
             </div>
           </div>
           <div className="flex justify-center lg:justify-start items-start gap-x-3 xl:gap-x-5">
-            <img className="h-16 w-16" src="/icons/sustainability.svg" alt="" />
+            <SustainabilityIcon />
+
             <div className="flex flex-col w-3/4 gap-y-3 border-b-2 border-black border-dotted pb-10">
               <h1 className="font-semibold uppercase text-2xl">
                 Sustainability

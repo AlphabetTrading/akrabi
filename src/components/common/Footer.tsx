@@ -7,8 +7,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
 
-gsap.registerPlugin(ScrollTrigger);
-
 type Props = {};
 
 const Footer = (props: Props) => {
@@ -20,10 +18,13 @@ const Footer = (props: Props) => {
         // markers: true,
         trigger: footerRef.current,
         start: "-100% center",
-        end: "top end",
+        end: "-50% end",
         scrub: 1,
       },
-      transform: "translateY(25%)",
+      transform: "translateY(20%)",
+      // yPercent:20
+      // ease:"power1.out"
+      // opacity:0,
       // y: "-500px"
       // duration:2
     });

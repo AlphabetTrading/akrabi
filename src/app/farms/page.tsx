@@ -1,8 +1,8 @@
 "use client";
 
-import CTA from "@/components/Farms/CTA";
-import Details from "@/components/Farms/Details";
-import LandingPage from "@/components/Farms/LandingPage";
+import CTA from "@/components/farmss/CTA";
+import Details from "@/components/farmss/Details";
+import LandingPage from "@/components/farmss/LandingPage";
 import { useRouter } from "next/navigation";
 import React from "react";
 

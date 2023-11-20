@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import CTA from "@/components/traceability/CTA";
-import LandingPage from "@/components/traceability/LandingPage";
-import Sustainability from "@/components/traceability/Sustainability";
-import Traceability from "@/components/traceability/Traceability";
+import CTA from "@/components/traceabilityy/CTA";
+import LandingPage from "@/components/traceabilityy/LandingPage";
+import Sustainability from "@/components/traceabilityy/Sustainability";
+import Traceability from "@/components/traceabilityy/Traceability";
 
 type Props = {};
 

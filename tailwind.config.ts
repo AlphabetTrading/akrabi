@@ -18,6 +18,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        barlowCondensed: ["Barlow Condensed", "sans-serif"],
+        barlow: ["Barlow", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],

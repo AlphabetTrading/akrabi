@@ -18,7 +18,7 @@ const TraceabilityIcon = (props: Props) => {
           r="37.25"
           stroke="black"
           strokeWidth="0.5"
-          stroke-dasharray="2 2"
+          strokeDasharray="2 2"
         />
         <circle
           cx="3.16159"

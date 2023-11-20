@@ -10,7 +10,6 @@ const Sustainability = (props: Props) => {
     <div className="w-full h-screen flex justify-center items-center relative">
       <Image
         fill
-
         className="z-10 object-cover object-center w-full h-full  "
         src="/images/home/sustainability.jpg"
         alt=""

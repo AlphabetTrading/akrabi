@@ -9,9 +9,7 @@ import ScrollToTop from "@/components/common/ScrollToTop";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import clsx from "clsx";
-import locomotiveScroll from "locomotive-scroll";
 import React from "react";
-import LocomotiveScroll from "locomotive-scroll";
 
 const barlow_condensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -68,9 +66,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="w-full flex flex-col items-center">
-      <body className={clsx(barlow_condensed.className)}>
+      <body className={clsx(barlow_condensed.className, "overflow-hidden")}>
         <Cursor />
-        {/* <Navbar /> */}
+        <Navbar isOpen={isOpen} toggleOpen={toggleOpen} />
         {children}
         <Footer />
         <ScrollToTop />

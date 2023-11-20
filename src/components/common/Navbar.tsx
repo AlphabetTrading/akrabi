@@ -6,31 +6,32 @@ import NavbarMenu from "./NavbarMenu";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clsx from "clsx";
+gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
   isOpen: boolean;
   toggleOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Path = (props: any) => (
-  <motion.path
-    fill={props.color}
-    strokeWidth="3"
-    stroke={props.color}
-    strokeLinecap="round"
-    {...props}
-    className="flex flex-col items-center"
-  />
-);
+// const Path = (props: any) => (
+//   <motion.path
+//     fill={props.color}
+//     strokeWidth="3"
+//     stroke={props.color}
+//     strokeLinecap="round"
+//     {...props}
+//     className="flex flex-col items-center"
+//   />
+// );
 
-const menuitem_parent_variants = {
-  open: {
-    height: "100%",
-  },
-  closed: {
-    height: 0,
-  },
-};
+// const menuitem_parent_variants = {
+//   open: {
+//     height: "100%",
+//   },
+//   closed: {
+//     height: 0,
+//   },
+// };
 
 const Navbar = ({ isOpen, toggleOpen }: Props) => {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -81,6 +82,7 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
         start: "top top",
         end: "max",
         onUpdate: (self) => {
+          console.log(self.direction);
           self.direction === -1
             ? showNav.current.play()
             : showNav.current.reverse();
@@ -97,8 +99,6 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
   }, []);
 
   useEffect(() => {
-    // toggle the direction of our timeline
-    // document.querySelector("body")?.style.overflowY("hidden");
     if (isOpen) {
       tl.current.play();
     } else {
@@ -117,7 +117,7 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
     <div ref={mainRef}>
       <div
         className={
-          "nav-bar flex fixed top-0 w-full z-50 justify-space-around items-center h-16 bg-transparent"
+          "nav-bar flex fixed top-0 w-full z-50 justify-space-around items-center h-16 bg-primary"
         }
       >
         <h1 className="logo text-2xl font-semibold text-black pl-5 lg:pl-12">

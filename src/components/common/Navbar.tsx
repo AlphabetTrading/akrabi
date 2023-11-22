@@ -124,11 +124,7 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
     <div ref={mainRef}>
       <div
         className={
-<<<<<<< HEAD
-          "nav-bar flex fixed top-0 w-full z-50 justify-between items-center h-16 px-10 bg-primary"
-=======
-          "nav-bar flex fixed top-0 w-full z-50 justify-space-around items-center h-16 bg-transparent"
->>>>>>> 4f23c31 (make navbar transparent)
+          "nav-bar flex fixed top-0 w-full z-50 justify-between items-center h-16 bg-transparent pr-5"
         }
       >
         <h1 className="logo text-2xl font-semibold text-black pl-5 lg:pl-12">
@@ -147,7 +143,7 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
               stroke="currentColor"
               fill="currentColor"
               strokeWidth="0"
-              viewBox="0 0 24 24"
+              viewBox="0 0 20 20"
             >
               <path fill="none" d="M0 0h24v24H0V0z"></path>
               <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>

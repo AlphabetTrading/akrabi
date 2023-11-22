@@ -128,7 +128,7 @@ const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
                   >
                     <h1
                       className={clsx(
-                        "uppercase font-semibold text-7xl text-white/50 hover:text-white",
+                        "uppercase font-semibold text-4xl md:text-5xl lg:text-7xl text-white/50 hover:text-white",
                         active ? "line-through text-white/100" : "",
                       )}
                     >

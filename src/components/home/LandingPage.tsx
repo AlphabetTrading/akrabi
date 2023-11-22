@@ -1,14 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import styles from "./gallery.module.css";
 import clsx from "clsx";
 import Image from "next/image";
 import gsap from "gsap";
 import useSplitWords from "@/hooks/splitLetters";
-import PronounceButton from "./PronounceAkraabi";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import PronounceButton from "./PronounceAkraabi";
 import Gallery from "./Gallery";
 
 gsap.registerPlugin(ScrollTrigger);

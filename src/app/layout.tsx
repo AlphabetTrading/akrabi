@@ -75,7 +75,7 @@ export default function RootLayout({
       <body
         className={clsx(
           barlow_condensed.className,
-          barlow.className,
+          // barlow.className,
           // "w-full min-h-screen h-full flex flex-col items-center relative",
         )}
       >

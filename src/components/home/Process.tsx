@@ -33,7 +33,11 @@ const Process = (props: Props) => {
     return () => ctx.revert(); // cleanup
   }, []);
   return (
-    <div  id="processSection" ref={stepsRef} className="w-full h-full flex justify-center">
+    <div
+      id="processSection"
+      ref={stepsRef}
+      className="w-full h-full flex justify-center"
+    >
       <div className="w-11/12 grid grid-cols-1 md:grid-cols-10 py-8 xl:py-16 gap-x-4 gap-y-6 justify-between items-center">
         <div className="md:col-span-3 flex flex-col gap-y-2 px-6">
           <Steps />

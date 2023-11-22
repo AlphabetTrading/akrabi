@@ -1,21 +1,21 @@
 "use client";
 
-import Link from "next/link";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import styles from "./gallery.module.css";
 import clsx from "clsx";
 import Image from "next/image";
 import gsap from "gsap";
 import useSplitWords from "@/hooks/splitLetters";
-import PronounceButton from "./PronounceAkraabi";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import PronounceButton from "./PronounceAkraabi";
 import Gallery from "./Gallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {};
 const phrase: string =
-  "Welcome to Akraabi, the hub of global coffee connections. We link passionate coffee producers directly to roasters worldwide, revolutionizing the green coffee trade. Explore exceptional beans, foster direct relationships, and redefine your coffee experience with us.";
+  "Welcome to Akraabi, the hub of global coffee connections. We link passionate coffee producers directly to roasters and coffee traders worldwide, revolutionizing the green coffee trade. Explore exceptional beans, foster direct relationships, and redefine your coffee experience with us.";
 
 const LandingPage = (props: Props) => {
   const mainRef = useRef<HTMLDivElement>(null);

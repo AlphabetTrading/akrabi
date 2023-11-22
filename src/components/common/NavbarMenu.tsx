@@ -34,7 +34,7 @@ const navigationItems = [
     id: 1,
     title: "Home",
     link: "/",
-    image: "/images/deforestation-landing-page.jpg",
+    image: "/images/traceability/traceability.jpg",
     sublinks: [],
   },
   // {
@@ -67,6 +67,7 @@ const navigationItems = [
     id: 6,
     title: "Deforestation",
     link: "/deforestation",
+    image: "/images/deforestation-landing-page.jpg",
     // sublinks: [
     //   {
     //     id: 1,
@@ -127,7 +128,7 @@ const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
                   >
                     <h1
                       className={clsx(
-                        "uppercase font-semibold text-7xl text-white/50 hover:text-white",
+                        "uppercase font-semibold text-4xl md:text-5xl lg:text-7xl text-white/50 hover:text-white",
                         active ? "line-through text-white/100" : "",
                       )}
                     >

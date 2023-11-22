@@ -7,31 +7,6 @@ import { gsap } from "gsap";
 type Props = {};
 
 const Steps = (props: Props) => {
-  useLayoutEffect(() => {
-    gsap.from(".process-image-b", {
-      yPercent: -6,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".process-image-b",
-        id: "process-image-b",
-        start: "top center",
-        end: "bottom top",
-        // markers:true,
-        scrub: 1,
-      },
-    });
-    gsap.from(".process-image", {
-      yPercent: 6,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".process-image",
-        id: "process-image",
-        start: "top center",
-        end: "bottom top",
-        scrub: 1,
-      },
-    });
-  }, []);
   return (
     <div
       className={clsx(

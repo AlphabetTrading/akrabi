@@ -1,15 +1,43 @@
 "use client";
 
-import React from "react";
-import Title from "../common/Title";
+import React, { useLayoutEffect, useRef } from "react";
 import SubTitle from "../common/SubTitle";
 import Steps from "./Steps";
+import { gsap } from "gsap";
 
 type Props = {};
 
 const Process = (props: Props) => {
+  const stepsRef = useRef(null);
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      // or we can use refs
+      gsap.from(".process-image-b", {
+        yPercent: 15,
+        scrollTrigger: {
+          scrub: 1,
+          trigger: stepsRef.current,
+        },
+        stagger: 0.2,
+      });
+      gsap.from(".process-image", {
+        yPercent: -10,
+        scrollTrigger: {
+          scrub: 1,
+          trigger: stepsRef.current,
+        },
+        stagger: 0.2,
+      });
+    }, stepsRef);
+
+    return () => ctx.revert(); // cleanup
+  }, []);
   return (
-    <div id="processSection" className="w-full h-full flex justify-center">
+    <div
+      id="processSection"
+      ref={stepsRef}
+      className="w-full h-full flex justify-center"
+    >
       <div className="w-11/12 grid grid-cols-1 md:grid-cols-10 py-8 xl:py-16 gap-x-4 gap-y-6 justify-between items-center">
         <div className="md:col-span-3 flex flex-col gap-y-2 px-6">
           <Steps />

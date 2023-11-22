@@ -20,7 +20,7 @@ const config: Config = {
       },
       fontFamily: {
         barlowCondensed: ["Barlow Condensed", "sans-serif"],
-        barlow: ["Barlow", "sans-serif"],
+        // barlow: ["Barlow", "sans-serif"],
         sans: ["Inter", "sans-serif"],
       },
     },

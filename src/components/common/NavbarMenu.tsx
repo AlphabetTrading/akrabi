@@ -98,7 +98,7 @@ const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
   return (
     <div
       // animate={isOpen ? "open" : "closed"}
-      className="nav-menu fixed inset-0 z-40 -translate-y-full w-full h-screen grid grid-cols-12 items-center bg-secondary"
+      className="nav-menu fixed min-h-screen inset-0 z-40 -translate-y-full w-full h-screen grid grid-cols-12 items-center bg-secondary"
       // variants={navbar_variants}
     >
       <div

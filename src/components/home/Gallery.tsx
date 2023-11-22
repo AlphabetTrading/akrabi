@@ -7,14 +7,16 @@ type Props = {};
 
 const Gallery = (props: Props) => {
   return (
-    <div className="">
-      <img
-        className="w-full flex lg:hidden "
+    <div className="relative h-full w-11/12 md:w-5/6">
+      <Image
+        fill
+        className="w-full absolute flex lg:hidden object-contain object-top "
         src="/images/homepage-small.png"
         alt="hero image"
       />
-      <img
-        className="w-full hidden lg:flex "
+      <Image
+        fill
+        className="w-full absolute inset-0 hidden lg:flex "
         src="/images/homepage.png"
         alt="hero image"
       />

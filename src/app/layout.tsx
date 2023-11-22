@@ -2,7 +2,7 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import "./globals.css";
 
-import { Barlow_Condensed } from "next/font/google";
+import { Barlow_Condensed, Barlow } from "next/font/google";
 
 import Cursor from "@/components/common/Cursor";
 import ScrollToTop from "@/components/common/ScrollToTop";
@@ -10,8 +10,14 @@ import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import clsx from "clsx";
 import React from "react";
+import Loader from "@/components/common/Loader";
 
 const barlow_condensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const barlow = Barlow({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
@@ -65,8 +71,15 @@ export default function RootLayout({
   }, [isOpen]);
 
   return (
-    <html lang="en" className="w-full flex flex-col items-center">
-      <body className={clsx(barlow_condensed.className, "overflow-hidden")}>
+    <html lang="en">
+      <body
+        className={clsx(
+          barlow_condensed.className,
+          barlow.className,
+          // "w-full min-h-screen h-full flex flex-col items-center relative",
+        )}
+      >
+        <Loader />
         <Cursor />
         <Navbar isOpen={isOpen} toggleOpen={toggleOpen} />
         {children}

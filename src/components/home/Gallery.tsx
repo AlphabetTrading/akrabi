@@ -7,12 +7,17 @@ type Props = {};
 
 const Gallery = (props: Props) => {
   return (
-    <div>
+    <div className="">
       <img
         className="w-full flex lg:hidden "
         src="/images/homepage-small.png"
+        alt="hero image"
       />
-      <img className="w-full hidden lg:flex " src="/images/homepage.png" />
+      <img
+        className="w-full hidden lg:flex "
+        src="/images/homepage.png"
+        alt="hero image"
+      />
       {/* <div
         className={clsx(
           styles.container_full,

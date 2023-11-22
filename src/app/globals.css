@@ -14,6 +14,7 @@
 
 body {
   overflow-x: hidden !important;
+  overflow-y: hidden !important;
   max-width: 2048px;
   position: relative;
 }
@@ -27,4 +28,10 @@ body {
 .testimonials .arrows .prev {
   border-color: rgba(255, 255, 255, 0.3);
   border-radius: 0;
+}
+
+/** generate select color  */
+::selection {
+  background-color: #281d13;
+  color: white;
 }

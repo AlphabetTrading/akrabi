@@ -8,8 +8,9 @@ import Image from "next/image";
 import gsap from "gsap";
 import useSplitWords from "@/hooks/splitLetters";
 import PronounceButton from "./PronounceAkraabi";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Gallery from "./Gallery";
+
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {};
@@ -21,6 +22,19 @@ const LandingPage = (props: Props) => {
   const { refs, splitWords } = useSplitWords({ phrase });
   const headerText = useRef(null);
   const container = useRef(null);
+
+  const handleScroll = (e: any) => {
+    e.preventDefault();
+    const element = document.querySelector(e.currentTarget.hash);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  };
+
   const createAnimation = () => {
     gsap.to(refs.current, {
       scrollTrigger: {
@@ -119,6 +133,13 @@ const LandingPage = (props: Props) => {
       <div className="landing-image w-11/12 md:w-5/6 mb-16">
         <Gallery />
       </div>
+      {/* <a
+        href={"#processSection"}
+        onClick={handleScroll}
+        className={clsx(styles.scrollDownBtn)}
+      >
+        .
+      </a> */}
     </div>
   );
 };

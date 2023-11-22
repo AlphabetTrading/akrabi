@@ -34,7 +34,7 @@ const navigationItems = [
     id: 1,
     title: "Home",
     link: "/",
-    image: "/images/deforestation-landing-page.jpg",
+    image: "/images/traceability/traceability.jpg",
     sublinks: [],
   },
   // {
@@ -67,6 +67,7 @@ const navigationItems = [
     id: 6,
     title: "Deforestation",
     link: "/deforestation",
+    image: "/images/deforestation-landing-page.jpg",
     // sublinks: [
     //   {
     //     id: 1,

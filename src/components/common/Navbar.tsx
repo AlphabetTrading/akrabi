@@ -79,6 +79,17 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
         .fromTo(".nav-bar", { yPercent: -100 }, { yPercent: 0, duration: 0.5 })
         .progress(1);
 
+      gsap.to(".nav-bar", {
+        background: "#FFFFFF",
+        scrollTrigger: {
+          trigger: mainRef.current,
+          start: "150px end",
+          end: "155px 20%",
+          // markers: true,
+          id: "nav",
+          scrub: 1,
+        },
+      });
       ScrollTrigger.create({
         start: "top top",
         end: "max",
@@ -89,11 +100,6 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
             : showNav.current.reverse();
         },
       });
-      // gsap.to(".active-nav-link", {
-      //   textDecoration: "line-through",
-      //   color:"white",
-      //   opacity:1
-      // });
     }, mainRef);
 
     return () => ctx.revert();
@@ -118,7 +124,11 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
     <div ref={mainRef}>
       <div
         className={
+<<<<<<< HEAD
           "nav-bar flex fixed top-0 w-full z-50 justify-between items-center h-16 px-10 bg-primary"
+=======
+          "nav-bar flex fixed top-0 w-full z-50 justify-space-around items-center h-16 bg-transparent"
+>>>>>>> 4f23c31 (make navbar transparent)
         }
       >
         <h1 className="logo text-2xl font-semibold text-black pl-5 lg:pl-12">

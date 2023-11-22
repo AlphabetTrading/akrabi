@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 type Props = {};
 const phrase: string =
-  "Welcome to Akraabi, the hub of global coffee connections. We link passionate coffee producers directly to roasters worldwide, revolutionizing the green coffee trade. Explore exceptional beans, foster direct relationships, and redefine your coffee experience with us.";
+  "Welcome to Akraabi, the hub of global coffee connections. We link passionate coffee producers directly to roasters and coffee traders worldwide, revolutionizing the green coffee trade. Explore exceptional beans, foster direct relationships, and redefine your coffee experience with us.";
 
 const LandingPage = (props: Props) => {
   const mainRef = useRef<HTMLDivElement>(null);

@@ -20,7 +20,7 @@ const Footer = (props: Props) => {
         end: "-50% end",
         scrub: 1,
       },
-      transform: "translateY(20%)",
+      yPercent: 20,
       // yPercent:20
       // ease:"power1.out"
       // opacity:0,

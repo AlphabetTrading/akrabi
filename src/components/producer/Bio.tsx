@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import SubTitle from "../commonn/SubTitle";
-import Title from "../commonn/Title";
+import SubTitle from "../common/SubTitle";
+import Title from "../common/Title";
 
 type Props = {};
 

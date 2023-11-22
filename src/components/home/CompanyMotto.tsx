@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useLayoutEffect } from "react";
-import Title from "../commonn/Title";
-import SubTitle from "../commonn/SubTitle";
+import Title from "../common/Title";
+import SubTitle from "../common/SubTitle";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import TraceabilityIcon from "@/icons/traceabilityIcon";

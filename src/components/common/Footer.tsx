@@ -6,8 +6,6 @@ import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 
-gsap.registerPlugin(ScrollTrigger);
-
 type Props = {};
 
 const Footer = (props: Props) => {
@@ -32,10 +30,7 @@ const Footer = (props: Props) => {
   }, []);
 
   return (
-    <footer
-      ref={footerRef}
-      className="footer hidden w-full  justify-center py-10"
-    >
+    <div ref={footerRef} className=" w-full flex justify-center py-10">
       <div className="w-11/12 lg:w-5/6 flex flex-col items-center lg:items-start">
         <div className="flex flex-col lg:flex-row lg:items-center w-full gap-y-5 min-h-[200px]">
           <div className="flex-3 flex-col justify-between h-full gap-y-3">
@@ -143,7 +138,7 @@ const Footer = (props: Props) => {
           <h1>© {GetCurrentYear()} Akraabi. All Rights Reserved</h1>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 

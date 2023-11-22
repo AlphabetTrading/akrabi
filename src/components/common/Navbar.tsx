@@ -6,6 +6,7 @@ import NavbarMenu from "./NavbarMenu";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clsx from "clsx";
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
@@ -117,14 +118,14 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
     <div ref={mainRef}>
       <div
         className={
-          "nav-bar flex fixed top-0 w-full z-50 justify-space-around items-center h-16 bg-primary"
+          "nav-bar flex fixed top-0 w-full z-50 justify-between items-center h-16 px-10 bg-primary"
         }
       >
         <h1 className="logo text-2xl font-semibold text-black pl-5 lg:pl-12">
-          AKRAABI
+          <Link href={"/"}>AKRAABI</Link>
         </h1>
         <button
-          className="flex flex-col items-center justify-center outline-none border-none cursor-pointer absolute top-3 right-4 w-12 h-12 bg-transparent rounded-full z-[100]"
+          className="flex w-10 h-10 relative items-center justify-center bg-transparent rounded-full z-[100] "
           onClick={() => {
             toggleOpen((prev) => !prev);
           }}
@@ -132,39 +133,35 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
           <div className="sr-only">Menu</div>
           {isOpen ? (
             <svg
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-4 h-4 lg:fill-black fill-white"
-              viewBox="0 0 21 21"
+              className="close-icon lg:fill-black/70 fill-white "
+              stroke="currentColor"
+              fill="currentColor"
+              strokeWidth="0"
+              viewBox="0 0 24 24"
             >
-              <path
-                d="M1.02556 20.9998C0.822736 20.9998 0.624454 20.9397 0.455797 20.827C0.287141 20.7143 0.155687 20.5542 0.0780629 20.3668C0.000439235 20.1794 -0.0198669 19.9732 0.0197132 19.7743C0.0592932 19.5754 0.156981 19.3926 0.300421 19.2492L19.2493 0.300364C19.4416 0.108044 19.7025 0 19.9744 0C20.2464 0 20.5073 0.108044 20.6996 0.300364C20.8919 0.492684 20.9999 0.753526 20.9999 1.02551C20.9999 1.29749 20.8919 1.55833 20.6996 1.75065L1.75071 20.6995C1.65557 20.7949 1.54253 20.8705 1.41809 20.922C1.29365 20.9735 1.16025 20.9999 1.02556 20.9998Z"
-                // fill="black"
-              />
-              <path
-                d="M19.9744 20.9998C19.8397 20.9999 19.7063 20.9735 19.5819 20.922C19.4574 20.8705 19.3444 20.7949 19.2492 20.6995L0.300364 1.75065C0.108044 1.55833 0 1.29749 0 1.02551C0 0.753526 0.108044 0.492684 0.300364 0.300364C0.492684 0.108044 0.753526 0 1.02551 0C1.29749 0 1.55833 0.108044 1.75065 0.300364L20.6995 19.2492C20.843 19.3926 20.9406 19.5754 20.9802 19.7743C21.0198 19.9732 20.9995 20.1794 20.9219 20.3668C20.8443 20.5542 20.7128 20.7143 20.5441 20.827C20.3755 20.9397 20.1772 20.9998 19.9744 20.9998Z"
-                // fill="black"
-              />
+              <path fill="none" d="M0 0h24v24H0V0z"></path>
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
             </svg>
           ) : (
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              width="512"
-              height="512"
-              x="0"
-              y="0"
-              viewBox="0 0 812 812"
-              // style="enable-background:new 0 0 512 512"
-              xmlSpace="preserve"
-              className=""
+              className="open-icon lg:fill-black/70 fill-white"
+              stroke="currentColor"
+              fill="none"
+              strokeWidth="0"
+              viewBox="0 0 24 24"
             >
-              <g>
-                <path
-                  d="M128 102.4c0-14.138 11.462-25.6 25.6-25.6h332.8c14.138 0 25.6 11.462 25.6 25.6S500.538 128 486.4 128H153.6c-14.138 0-25.6-11.463-25.6-25.6zm358.4 128H25.6C11.462 230.4 0 241.863 0 256c0 14.138 11.462 25.6 25.6 25.6h460.8c14.138 0 25.6-11.462 25.6-25.6 0-14.137-11.462-25.6-25.6-25.6zm0 153.6H256c-14.137 0-25.6 11.462-25.6 25.6 0 14.137 11.463 25.6 25.6 25.6h230.4c14.138 0 25.6-11.463 25.6-25.6 0-14.138-11.462-25.6-25.6-25.6z"
-                  opacity="1"
-                  className="text-black"
-                ></path>
-              </g>
+              <path
+                d="M22 18.0048C22 18.5544 21.5544 19 21.0048 19H12.9952C12.4456 19 12 18.5544 12 18.0048C12 17.4552 12.4456 17.0096 12.9952 17.0096H21.0048C21.5544 17.0096 22 17.4552 22 18.0048Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M22 12.0002C22 12.5499 21.5544 12.9954 21.0048 12.9954H2.99519C2.44556 12.9954 2 12.5499 2 12.0002C2 11.4506 2.44556 11.0051 2.99519 11.0051H21.0048C21.5544 11.0051 22 11.4506 22 12.0002Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M21.0048 6.99039C21.5544 6.99039 22 6.54482 22 5.99519C22 5.44556 21.5544 5 21.0048 5H8.99519C8.44556 5 8 5.44556 8 5.99519C8 6.54482 8.44556 6.99039 8.99519 6.99039H21.0048Z"
+                fill="currentColor"
+              ></path>
             </svg>
           )}
         </button>

@@ -60,15 +60,8 @@ export default function RootLayout({
       const locomotiveScroll = new LocomotiveScroll({
         direction: "horizontal",
       });
-
-      if (isOpen) {
-        locomotiveScroll.stop();
-        console.log("stop");
-      } else {
-        locomotiveScroll.start();
-      }
     })();
-  }, [isOpen]);
+  }, []);
 
   return (
     <html lang="en">

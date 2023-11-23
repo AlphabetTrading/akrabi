@@ -2,9 +2,11 @@
 
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 type Props = {
   isOpen: boolean;
@@ -90,23 +92,32 @@ const navigationItems = [
 
 const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
   const pathname = usePathname();
-  const [activeImage, setActiveImage] = useState("");
+  const [activeImage, setActiveImage] = useState(
+    navigationItems.find(
+      (navigationItem: any) => navigationItem.link === pathname,
+    )?.image ?? "/images/traceability/traceability.jpg",
+  );
+  const [activeNavigationItem, setActiveNavigationItem] = useState<any>(
+    navigationItems[0],
+  );
+  const [isHovering, setIsHovering] = useState(false);
+
   useEffect(() => {
-    setActiveImage("/images/deforestation-landing-page.jpg");
-  }, []);
+    const item =
+      navigationItems.find(
+        (navigationItem: any) => navigationItem.link === pathname,
+      ) ?? navigationItems[0];
+
+    setActiveNavigationItem(item);
+    setActiveImage(item.image ?? "/images/traceability/traceability.jpg");
+  }, [pathname]);
 
   return (
-    <div
-      // animate={isOpen ? "open" : "closed"}
-      className="nav-menu fixed min-h-screen inset-0 z-40 -translate-y-full w-full h-screen grid grid-cols-12 items-center bg-secondary"
-      // variants={navbar_variants}
-    >
+    <div className="nav-menu fixed min-h-screen inset-0 z-40 -translate-y-full w-full h-screen grid grid-cols-12 items-center bg-secondary">
       <div
         className={clsx(
           "w-full flex justify-center col-span-12 lg:col-span-4 bg-secondary",
         )}
-        // animate={isOpen ? "open" : "closed"}
-        // variants={navbar_variants}
       >
         <ul className="w-3/4 flex flex-col justify-center gap-y-6">
           {navigationItems.map((navigationItem: any, index: number) => {
@@ -124,7 +135,14 @@ const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
                     onClick={() => {
                       toggleOpen((prev) => !prev);
                     }}
-                    onMouseEnter={() => setActiveImage(navigationItem.image)}
+                    onMouseEnter={() => {
+                      setActiveImage(navigationItem.image);
+                      setIsHovering(true);
+                    }}
+                    onMouseLeave={() => {
+                      setIsHovering(false);
+                      setActiveImage(activeNavigationItem.image);
+                    }}
                   >
                     <h1
                       className={clsx(
@@ -144,9 +162,32 @@ const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
       <div
         // animate={isOpen ? "open" : "closed"}
         // variants={navbar_variants}
-        className="lg:flex justify-center items-center w-full h-full hidden col-span-12 lg:col-span-8 bg-primary"
+        className="lg:flex relative  items-center w-full h-full hidden col-span-12 lg:col-span-8 bg-primary"
       >
-        <img src={activeImage} alt="" className="h-96" />
+        {navigationItems.map((navigationItem: any, index: number) => {
+          return (
+            <div
+              key={index}
+              className={clsx(
+                "absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-1/2 h-1/2 duration-300 transition-all",
+                isHovering
+                  ? navigationItem.image === activeImage
+                    ? "opacity-100"
+                    : "opacity-0"
+                  : activeNavigationItem.image === navigationItem.image
+                  ? "opacity-100"
+                  : "opacity-0",
+              )}
+            >
+              <Image
+                src={activeImage}
+                fill
+                alt="preview image"
+                className="h-full w-full absolute inset-0 object-cover"
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

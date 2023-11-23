@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/all";
 import TraceabilityIcon from "@/icons/traceabilityIcon";
 import TransparencyIcon from "@/icons/transparencyIcon";
 import SustainabilityIcon from "@/icons/sustainabilityIcon";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,9 +44,15 @@ const CompanyMotto = (props: Props) => {
                 behind each bean, fostering trust in our transparent supply
                 chain.
               </p>
-              <button className="w-fit p-1 px-5 border-2 border-black">
-                See more
-              </button>
+              <Link
+                href={"/"}
+                className="w-fit p-1 px-5 border-2 border-black group relative overflow-hidden"
+              >
+                <span className="relative group-hover:text-white delay-75 duration-200 z-10">
+                  See more
+                </span>
+                <div className="min-w-full  group-hover:flex duration-500 min-h-full ease-in-out z-0 scale-x-[1.5] scale-y-150 -translate-x-[125%] group-hover:translate-x-[5%] translate-y-1/2 group-hover:-translate-y-0  transition-all rounded-full absolute inset-0 bg-secondary"></div>
+              </Link>
             </div>
           </div>
           <div className="flex justify-center lg:justify-start items-start gap-x-3 xl:gap-x-5">
@@ -58,9 +65,16 @@ const CompanyMotto = (props: Props) => {
                 is a testament to responsible sourcing and a direct link to the
                 hardworking hands behind it.
               </p>
-              <button className="w-fit p-1 px-5 border-2 border-black">
-                See more
-              </button>
+
+              <Link
+                href={"/"}
+                className="w-fit p-1 px-5 border-2 border-black group relative overflow-hidden"
+              >
+                <span className="relative group-hover:text-white delay-75 duration-200 z-10">
+                  See more
+                </span>
+                <div className="min-w-full  group-hover:flex duration-500 ease-in-out min-h-full z-0 scale-x-[1.5] scale-y-150 -translate-x-[125%] group-hover:translate-x-[5%] translate-y-1/2 group-hover:-translate-y-0  transition-all rounded-full absolute inset-0 bg-secondary"></div>
+              </Link>
             </div>
           </div>
           <div className="flex justify-center lg:justify-start items-start gap-x-3 xl:gap-x-5">
@@ -76,9 +90,15 @@ const CompanyMotto = (props: Props) => {
                 well-being of our planet and the livelihoods of the communities
                 that nurture our exceptional green coffee.
               </p>
-              <button className="w-fit p-1 px-5 border-2 border-black">
-                See more
-              </button>
+              <Link
+                href={"/"}
+                className="w-fit p-1 px-5 border-2 border-black group relative overflow-hidden"
+              >
+                <span className="relative group-hover:text-white delay-75 duration-200 z-10">
+                  See more
+                </span>
+                <div className="min-w-full  group-hover:flex duration-500 ease-in-out min-h-full z-0 scale-x-[1.5] scale-y-150 -translate-x-[125%] group-hover:translate-x-[5%] translate-y-1/2 group-hover:-translate-y-0  transition-all rounded-full absolute inset-0 bg-secondary"></div>
+              </Link>
             </div>
           </div>
         </div>

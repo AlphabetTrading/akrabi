@@ -60,8 +60,11 @@ const Loader = (props: Props) => {
         },
         4,
       )
-      .to(
+      .fromTo(
         ".preloader-1",
+        {
+          translateY: "-50%",
+        },
         {
           duration: 1.5,
           ease: "power2.inOut",
@@ -69,8 +72,11 @@ const Loader = (props: Props) => {
         },
         4,
       )
-      .to(
+      .fromTo(
         ".preloader-2",
+        {
+          translateY: "49%",
+        },
         {
           duration: 1.5,
           ease: "power2.inOut",
@@ -94,9 +100,9 @@ const Loader = (props: Props) => {
       ref={loaderContainerRef}
       className="loading-page fixed min-h-full w-full inset-0 flex items-center justify-center z-[1000]"
     >
-      <div className="preloader-1 min-h-screen bg-[#09091a] absolute inset-0 -translate-y-1/2 z-10"></div>
-      <div className="preloader-2 min-h-screen bg-[#09091a] absolute inset-0 translate-y-1/2 z-10"></div>
-      <div className="loader relative w-full flex justify-center items-center min-h-full flex-col gap-y-4 inset-0 z-20">
+      <div className="preloader-1 min-h-screen bg-[#09091a] absolute outline-none border-none appearance-none inset-0 z-10"></div>
+      <div className="preloader-2 min-h-screen bg-[#09091a] absolute outline-none border-none appearance-none inset-0 z-20"></div>
+      <div className="loader relative w-full flex justify-center items-center outline-none border-none appearance-none min-h-full flex-col gap-y-4 inset-0 z-20">
         <div className="loading__text text-white text-2xl uppercase font-barlowCondensed font-bold -mt-10">
           <span>L</span>
           <span>o</span>

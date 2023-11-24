@@ -68,6 +68,7 @@ export default function RootLayout({
       <body
         className={clsx(
           barlow_condensed.className,
+          "max-w-[2048px] mx-auto overflow-hidden relative",
           // barlow.className,
           // "w-full min-h-screen h-full flex flex-col items-center relative",
         )}

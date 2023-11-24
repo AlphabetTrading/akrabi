@@ -122,7 +122,7 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
     <div ref={mainRef}>
       <div
         className={
-          "nav-bar flex fixed top-0 w-full z-50 justify-between items-center h-16 bg-transparent pr-5"
+          "nav-bar flex fixed top-0 w-full max-w-[2048px] z-50 justify-between items-center h-16 bg-transparent pr-5"
         }
       >
         <h1 className="logo text-2xl font-semibold text-black pl-5 lg:pl-12">

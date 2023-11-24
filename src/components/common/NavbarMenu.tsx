@@ -59,12 +59,6 @@ const navigationItems = [
   //   link: "/offerings",
   //   sublinks: [],
   // },
-  // {
-  //   id: 5,
-  //   title: "Contact",
-  //   link: "/contact",
-  //   sublinks: [],
-  // },
   {
     id: 6,
     title: "Deforestation",
@@ -87,6 +81,13 @@ const navigationItems = [
     //     link: "/",
     //   },
     // ],
+  },
+  {
+    id: 7,
+    title: "Contact Us",
+    link: "/contact-us",
+    image: "/images/traceability/transparency.jpg",
+    sublinks: [],
   },
 ];
 
@@ -113,7 +114,7 @@ const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
   }, [pathname]);
 
   return (
-    <div className="nav-menu fixed min-h-screen inset-0 z-40 -translate-y-full w-full h-screen grid grid-cols-12 items-center bg-secondary">
+    <div className="nav-menu fixed min-h-screen inset-0 z-40 -translate-y-full w-full max-w-[2048px] h-screen grid grid-cols-12 items-center bg-secondary mx-auto">
       <div
         className={clsx(
           "w-full flex justify-center col-span-12 lg:col-span-4 bg-secondary",

@@ -104,13 +104,13 @@ const Loader = (props: Props) => {
       <div className="preloader-2 min-h-screen bg-[#09091a] absolute outline-none border-none appearance-none inset-0 z-20"></div>
       <div className="loader relative w-full flex justify-center items-center outline-none border-none appearance-none min-h-full flex-col gap-y-4 inset-0 z-20">
         <div className="loading__text text-white text-2xl uppercase font-barlowCondensed font-bold -mt-10">
-          <span>L</span>
-          <span>o</span>
+          <span>A</span>
+          <span>k</span>
+          <span>r</span>
           <span>a</span>
-          <span>d</span>
+          <span>a</span>
+          <span>b</span>
           <span>i</span>
-          <span>n</span>
-          <span>g</span>
         </div>
         <div className="loader__bar h-0.5 w-4/5 lg:w-1/3 xl:w-1/4  bg-white/10 ">
           <div className="loader__bar__inner h-0.5 w-0 bg-gradient-to-r from-[#12c2e9] via-[#c471ed] to-[#f64f59]"></div>

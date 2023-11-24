@@ -1,5 +1,5 @@
 import React from "react";
-import { Testimony } from "../../../types/testimony";
+import { Testimony } from "../../types/testimony";
 
 type Props = {
   testimony: Testimony;

@@ -111,6 +111,9 @@ const Footer = (props: Props) => {
                     <Link href="/#">Traceability</Link>
                   </li>
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                    <Link href="/transparency">Transparency</Link>
+                  </li>
+                  <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/deforestation">Deforestation</Link>
                   </li>
                   {/* <li className="hover:scale-105 cursor-pointer transition-all duration-200">

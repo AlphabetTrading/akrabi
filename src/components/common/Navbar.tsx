@@ -122,14 +122,14 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
     <div ref={mainRef}>
       <div
         className={
-          "nav-bar flex fixed top-0 w-full max-w-[2048px] z-50 justify-between items-center h-16 bg-transparent pr-5"
+          "nav-bar flex fixed top-0 w-full max-w-[2048px] z-50 justify-between items-center h-16 bg-transparent px-2 lg:px-5"
         }
       >
-        <h1 className="logo text-2xl font-semibold text-black pl-5 lg:pl-12">
+        <h1 className="logo text-2xl font-semibold text-black ml-5">
           <Link href={"/"}>AKRAABI</Link>
         </h1>
         <button
-          className="flex w-8 h-8 lg:w-9 lg:h-9 relative items-center justify-center bg-transparent rounded-full z-[100] "
+          className="flex w-8 h-8 lg:w-9 lg:h-9 relative items-center justify-center bg-transparent rounded-full z-[100] mr-5"
           onClick={() => {
             toggleOpen((prev) => !prev);
           }}

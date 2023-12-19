@@ -84,6 +84,13 @@ const navigationItems = [
   },
   {
     id: 7,
+    title: "Transparency",
+    link: "/transparency",
+    image:
+      "https://akraabi.s3.amazonaws.com/transparency/transparency-hero.webp",
+  },
+  {
+    id: 8,
     title: "Contact Us",
     link: "/contact-us",
     image: "/images/traceability/transparency.jpg",
@@ -117,7 +124,7 @@ const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
     <div className="nav-menu fixed min-h-screen inset-0 z-40 -translate-y-full w-full max-w-[2048px] h-screen grid grid-cols-12 items-center bg-secondary mx-auto">
       <div
         className={clsx(
-          "w-full flex justify-center col-span-12 lg:col-span-4 bg-secondary",
+          "w-full flex justify-center col-span-12 lg:col-span-5 bg-secondary",
         )}
       >
         <ul className="w-3/4 flex flex-col justify-center gap-y-6">
@@ -163,7 +170,7 @@ const NavbarMenu = ({ isOpen, toggleOpen }: Props) => {
       <div
         // animate={isOpen ? "open" : "closed"}
         // variants={navbar_variants}
-        className="lg:flex relative  items-center w-full h-full hidden col-span-12 lg:col-span-8 bg-primary"
+        className="lg:flex relative  items-center w-full h-full hidden col-span-12 lg:col-span-7 bg-primary"
       >
         {navigationItems.map((navigationItem: any, index: number) => {
           return (

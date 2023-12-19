@@ -5,19 +5,19 @@ type Props = {};
 
 const SolvingProblem = (props: Props) => {
   return (
-    <div className="w-full h-full flex flex-col items-center gap-y-12">
+    <div className="w-full h-full flex flex-col items-center">
       <div className="w-full flex flex-col lg:flex-row items-center">
         <div className="w-full lg:w-1/3 h-[50vh] lg:h-[80vh] relative">
           <Image
-            className="h-full"
+            className="object-cover object-center w-full h-full"
             fill
-            src="/images/deforestation-landing-page.jpg"
-            alt=""
+            src="https://akraabi.s3.amazonaws.com/transparency/transparency-problem.webp"
+            alt="transparency-solving-problem"
           />
         </div>
-        <div className="w-5/6 lg:w-2/3 flex flex-col items-start py-8 lg:p-12 lg:pl-16">
+        <div className="w-11/12 h-full lg:w-2/3 flex flex-col items-start py-8 lg:p-12 lg:pl-16">
           <div className="w-full lg:w-5/6 flex flex-col gap-y-4">
-            <h1 className="w-4/5 text-2xl lg:text-5xl font-semibold mb-4">
+            <h1 className="w-4/5 text-2xl lg:text-5xl font-semibold lg:mb-4">
               Solving an age-old problem
             </h1>
             <p className="lg:text-xl">
@@ -48,18 +48,21 @@ const SolvingProblem = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col items-center">
-        <div className="w-full flex flex-col lg:flex-row items-center">
-          <div className="w-5/6 lg:w-1/2 flex flex-col items-center py-8 lg:p-12 lg:pr-16 order-2 lg:order-1">
-            <div className="w-full lg:w-5/6 flex flex-col gap-y-4">
+      <div className="w-full flex flex-col items-center lg:py-12">
+        <div className="w-11/12 lg:w-5/6 flex flex-col lg:flex-row lg:justify-between gap-y-4 items-start">
+          <div className="lg:w-1/2 flex flex-col items-center lg:pr-16">
+            <div className="w-full flex flex-col gap-y-4">
               <p className="lg:text-xl">
                 The country was looking for a marketing system that coordinates
                 better, that links faster and that protects the interests of
-                both sides of the trade. And that is where the ECX came in. The
-                Ethiopia Commodity Exchange, or ECX, established April 2008, is
-                a marketplace, where buyers and sellers come together to trade,
-                assured of quality, delivery and payment. The first of its kind
-                in Ethiopia,
+                both sides of the trade. And that is where the ECX came in.
+                <span className="font-bold">
+                  {" "}
+                  The Ethiopian Commodity Exchange
+                </span>
+                , or ECX, established April 2008, is a marketplace, where buyers
+                and sellers come together to trade, assured of quality, delivery
+                and payment. The first of its kind in Ethiopia,
               </p>
               <p className="lg:text-xl">
                 ECX trading covers six target commodities, selected in terms of
@@ -69,37 +72,30 @@ const SolvingProblem = (props: Props) => {
               </p>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 h-[55vh] relative order-1 lg:order-2">
-            <Image
-              className="h-full"
-              fill
-              src="/images/deforestation-landing-page.jpg"
-              alt=""
-            />
+          <div className="lg:w-1/2 lg:text-xl lg:pl-16">
+            <p>ECX is a national multi-commodity exchange that </p>
+            <ul className="w-full lg:w-5/6 list-disc pl-10">
+              <li>
+                provides market integrity, by guaranteeing the product grade and
+                quantity and operating a system of daily clearing and settling
+                of contracts 
+              </li>
+              <li>
+                enhances market efficiency by operating a trading system where
+                buyers and sellers can coordinate in a seamless way on the basis
+                of standardized contracts 
+              </li>
+              <li>
+                enables market transparency by disseminating market information
+                in real time to all market players, and 
+              </li>
+              <li>
+                allows risk management by offering contracts for future
+                delivery, providing sellers and buyers a way to hedge against
+                price risk.
+              </li>
+            </ul>
           </div>
-        </div>
-        <div className="w-5/6 lg:text-xl lg:mt-16">
-          <p>ECX is a national multi-commodity exchange that </p>
-          <ul className="w-full lg:w-3/5 list-disc pl-10">
-            <li>
-              provides market integrity, by guaranteeing the product grade and
-              quantity and operating a system of daily clearing and settling of
-              contracts 
-            </li>
-            <li>
-              enhances market efficiency by operating a trading system where
-              buyers and sellers can coordinate in a seamless way on the basis
-              of standardized contracts 
-            </li>
-            <li>
-              enables market transparency by disseminating market information in
-              real time to all market players, and 
-            </li>
-            <li>
-              allows risk management by offering contracts for future delivery,
-              providing sellers and buyers a way to hedge against price risk.
-            </li>
-          </ul>
         </div>
       </div>
     </div>

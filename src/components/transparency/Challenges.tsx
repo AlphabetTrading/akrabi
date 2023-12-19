@@ -17,35 +17,35 @@ const CHALLENGES = [
     title: "Complex and Fragmented Supply Chain",
     description:
       "Ethiopia's coffee sector is characterized by a complex and fragmented supply chain involving numerous intermediaries, including smallholder farmers, washing stations, exporters, roasters, and retailers. This complex network makes it difficult to track the movement of coffee beans from farm to cup and identify potential issues.",
-    image: "/images/deforestation-landing-page.jpg",
+    image: "/transparency-1.webp",
   },
   {
     id: 2,
     title: "Limited Data Availability and Reliability",
     description:
       "Access to reliable and comprehensive data on coffee production, pricing, and trade is often limited, particularly at the farm level. This lack of data makes it challenging to verify claims of transparency, assess the true value of farmers' beans, and identify potential discrepancies or unfair practices.",
-    image: "/images/deforestation-landing-page.jpg",
+    image: "/transparency-2.webp",
   },
   {
     id: 3,
     title: "Weak Infrastructure and Information Technology",
     description:
       "Inadequate infrastructure and access to information technology in rural areas hinder transparency efforts. Farmers may lack access to digital tools, reliable internet connectivity, or the knowledge to utilize technology for tracking and documenting their coffee production and sales.",
-    image: "/images/deforestation-landing-page.jpg",
+    image: "/transparency-3.webp",
   },
   {
     id: 4,
     title: "Lack of Standardization",
     description:
       "The absence of standardized practices and terminology for transparency across the supply chain leads to inconsistencies in reporting and communication. This lack of standardization makes it difficult to compare and verify information from different sources, such as farmers, washing stations, and exporters.",
-    image: "/images/deforestation-landing-page.jpg",
+    image: "/transparency-4.webp",
   },
   {
     id: 5,
     title: "Consumer Awareness and Demand",
     description:
       "The level of consumer awareness and demand for transparent coffee can influence transparency efforts. If consumers prioritize transparency and are willing to pay a premium for transparently sourced coffee, there will be greater incentives for businesses to invest in transparency initiatives.",
-    image: "/images/deforestation-landing-page.jpg",
+    image: "/transparency-5.webp",
   },
 ];
 
@@ -96,19 +96,19 @@ const Challenges = (props: Props) => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center gap-y-8">
-      <div className="flex flex-col w-5/6 gap-y-4">
-        <h1 className="w-full lg:w-1/2 text-2xl lg:text-5xl">
+    <div className="w-full h-full flex flex-col items-center gap-y-4 pt-8 lg:pt-12">
+      <div className="flex flex-col w-11/12 lg:w-5/6">
+        <h1 className="w-full lg:w-1/2 text-2xl lg:text-5xl font-semibold mb-2 lg:mb-4">
           Challenges to transparency in the Ethiopian coffee sector
         </h1>
-        <p className="lg:text-xl">
+        <p className="lg:text-xl lg:w-3/4">
           The Ethiopian coffee sector, renowned for its diverse and high-quality
           coffee beans, faces several challenges in achieving transparency
           throughout its supply chain. These challenges hinder the ability to
           track the origins and movement of coffee beans.
         </p>
       </div>
-      <motion.div className="w-11/12 lg:self-end">
+      <motion.div className="w-11/12 lg:self-end py-8">
         <Slider
           ref={sliderRef}
           className="challenges relative overflow-visible transition-all duration-500 ease-in-out"
@@ -121,12 +121,17 @@ const Challenges = (props: Props) => {
                   "w-full lg:!w-[95%] h-[500px] flex justify-center items-center self-center justify-self-center relative transition-all duration-500 ease-in-out",
                 )}
               >
-                <Image fill alt={challenge.title} src={challenge.image} />
+                <Image
+                  className="object-cover object-center w-full h-full"
+                  fill
+                  alt={challenge.title}
+                  src={`https://akraabi.s3.amazonaws.com/transparency${challenge.image}`}
+                />
                 <div className="absolute inset-0 p-5 lg:p-8 py-10 lg:py-12 flex flex-col gap-y-2 justify-end bg-black/40 text-white">
-                  <h1 className="w-4/5 text-3xl font-semibold">
+                  <h1 className="w-4/5 text-3xl font-semibold mb-2 lg:mb-4">
                     {challenge.title}
                   </h1>
-                  <p>{challenge.description}</p>
+                  <p className="text-lg">{challenge.description}</p>
                 </div>
               </div>
             </div>
@@ -178,7 +183,7 @@ const Challenges = (props: Props) => {
             </button>
           </div>
         </div>
-        <div className="w-full h-4 bg-primary relative rounded-3xl overflow-hidden transition-all duration-150 ease-in-out">
+        <div className="w-full h-3 bg-secondary/10 relative rounded-3xl overflow-hidden transition-all duration-150 ease-in-out">
           <div
             style={{
               width: `${progressBarWidth}%`,

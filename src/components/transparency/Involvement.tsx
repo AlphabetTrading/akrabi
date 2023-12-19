@@ -5,11 +5,11 @@ type Props = {};
 
 const Involvement = (props: Props) => {
   return (
-    <div className="w-full h-full flex flex-col items-center gap-y-12 py-12">
+    <div className="w-full h-full flex flex-col items-center gap-y-4 py-8 lg:pt-12">
       <div className="w-full flex flex-col lg:flex-row items-center">
-        <div className="w-5/6 lg:w-3/5 flex flex-col items-end py-8 lg:pr-16">
+        <div className="w-11/12 lg:w-3/5 flex flex-col items-end py-4 lg:pr-16">
           <div className="w-full lg:w-5/6 flex flex-col gap-y-4 lg:text-right">
-            <h1 className="w-4/5 text-2xl lg:text-5xl font-semibold mb-4 lg:self-end">
+            <h1 className="w-4/5 text-2xl lg:text-5xl font-semibold lg:mb-4 lg:self-end">
               Our involvement<br></br> in the coffee value chain
             </h1>
             <p className="lg:text-xl">
@@ -54,9 +54,9 @@ const Involvement = (props: Props) => {
         </div>
         <div className="w-full lg:w-2/5 h-[50vh] lg:h-screen relative">
           <Image
-            className="h-full"
+            className="object-cover object-center w-full h-full"
             fill
-            src="/images/deforestation-landing-page.jpg"
+            src="https://akraabi.s3.amazonaws.com/transparency/transparency-involvement.webp"
             alt=""
           />
         </div>

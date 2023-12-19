@@ -96,25 +96,25 @@ const Footer = (props: Props) => {
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/">Home</Link>
                   </li>
-                  <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                  {/* <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/#">Producers</Link>
                   </li>
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/#">Farms</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div className="flex flex-col gap-y-2">
                 <h1 className="text-2xl font-semibold">Resources</h1>
                 <ul className="text-xl">
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
+                    <Link href="/deforestation">Deforestation</Link>
+                  </li>
+                  <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/#">Traceability</Link>
                   </li>
                   <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/transparency">Transparency</Link>
-                  </li>
-                  <li className="hover:scale-105 cursor-pointer transition-all duration-200">
-                    <Link href="/deforestation">Deforestation</Link>
                   </li>
                   {/* <li className="hover:scale-105 cursor-pointer transition-all duration-200">
                     <Link href="/#">Sustainability</Link>

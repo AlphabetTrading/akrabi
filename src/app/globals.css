@@ -43,3 +43,7 @@ body {
 .challenges .slick-current {
   scale: 1;
 }
+
+.contact-map {
+  filter: invert(75%) grayscale(75%);
+}

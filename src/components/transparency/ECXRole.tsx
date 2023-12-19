@@ -5,20 +5,20 @@ type Props = {};
 
 const ECXRole = (props: Props) => {
   return (
-    <div className="w-full h-full flex flex-col items-center py-12 gap-y-12">
+    <div className="w-full h-full flex flex-col items-center pt-8 lg:pt-12">
       <div className="w-full flex flex-col items-center">
         <div className="w-full flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 h-[55vh] lg:h-[75vh] relative">
             <Image
-              className="h-full"
+              className="object-cover object-center w-full h-full"
               fill
-              src="/images/deforestation-landing-page.jpg"
-              alt=""
+              src="https://akraabi.s3.amazonaws.com/transparency/transparency-role.webp"
+              alt="transparency-role"
             />
           </div>
-          <div className="w-5/6 lg:w-1/2 flex flex-col items-center py-8 lg:p-12 lg:pr-16">
+          <div className="w-11/12 lg:w-1/2 flex flex-col items-start py-8 lg:p-12 lg:pl-16">
             <div className="w-full lg:w-5/6 flex flex-col gap-y-4">
-              <h1 className="w-full text-2xl lg:text-5xl font-semibold">
+              <h1 className="w-full text-2xl lg:text-5xl font-semibold lg:mb-4">
                 ECX&apos;s Role in Coffee Market Diminishes
               </h1>
               <p className="lg:text-xl">
@@ -40,8 +40,8 @@ const ECXRole = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="w-5/6 flex flex-col lg:flex-row lg:text-xl lg:mt-8 gap-y-4">
-          <p className="w-full lg:w-1/2 lg:text-xl lg:pr-12">
+        <div className="w-11/12 lg:w-5/6 flex flex-col lg:flex-row justify-between lg:text-xl lg:py-12 gap-y-4">
+          <p className="w-full lg:w-1/2 lg:text-xl lg:pr-16">
             Under vertical marketing, coffee growers and suppliers can export
             directly to international buyers. Under the ECX model, exporters
             approve high grade samples. However, the actual bulk coffee they
@@ -51,7 +51,7 @@ const ECXRole = (props: Props) => {
             lots. Now grading is done through the Ethiopian Coffee and Tea
             Authority (ECTA), without ECX&apos;s intervention. 
           </p>
-          <p className="w-full lg:w-1/2 lg:text-xl lg:pl-12">
+          <p className="w-full lg:w-1/2 lg:text-xl lg:pl-16">
             As of 2022, over 90% of Ethiopian coffee exported was processed
             through the vertical marketing model. Also under ECX&apos;s model,
             you pay for loading, unloading, warehouse rent, and commission for

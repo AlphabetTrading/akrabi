@@ -5,10 +5,10 @@ type Props = {};
 
 const ECXRole = (props: Props) => {
   return (
-    <div className="w-full h-full flex flex-col items-center py-12 gap-y-24">
-      <div className="w-full flex flex-col items-center gap-y-4">
-        <div className="w-full flex items-center">
-          <div className="w-1/2 h-[80vh] relative">
+    <div className="w-full h-full flex flex-col items-center py-12 gap-y-12">
+      <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col lg:flex-row items-center">
+          <div className="w-full lg:w-1/2 h-[55vh] lg:h-[75vh] relative">
             <Image
               className="h-full"
               fill
@@ -16,12 +16,12 @@ const ECXRole = (props: Props) => {
               alt=""
             />
           </div>
-          <div className="w-1/2 flex flex-col items-center p-12 pr-16">
-            <div className="w-5/6 flex flex-col gap-y-4">
-              <h1 className="w-full text-2xl lg:text-5xl font-semibold mb-4">
+          <div className="w-5/6 lg:w-1/2 flex flex-col items-center py-8 lg:p-12 lg:pr-16">
+            <div className="w-full lg:w-5/6 flex flex-col gap-y-4">
+              <h1 className="w-full text-2xl lg:text-5xl font-semibold">
                 ECX&apos;s Role in Coffee Market Diminishes
               </h1>
-              <p className="lg:text-2xl">
+              <p className="lg:text-xl">
                 Ethiopia&apos;s modality for coffee exports has shifted from the
                 Ethiopian Commodity Exchange (ECX) to vertical marketing. During
                 the 2020/21 Ethiopian fiscal year that ended June 30, 2021, over
@@ -29,7 +29,7 @@ const ECXRole = (props: Props) => {
                 modality which is outside of ECX&apos;s platform - earning the
                 nation a record high income of $970 million.
               </p>
-              <p className="lg:text-2xl">
+              <p className="lg:text-xl">
                 This value has only been in the range of $600-800 million during
                 the past decade. The price of regular Ethiopian coffee also
                 jumped in the international market from $2,800/ton two years ago
@@ -40,8 +40,8 @@ const ECXRole = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="w-5/6 flex lg:text-2xl">
-          <p className="w-1/2 lg:text-2xl pr-12">
+        <div className="w-5/6 flex flex-col lg:flex-row lg:text-xl lg:mt-8 gap-y-4">
+          <p className="w-full lg:w-1/2 lg:text-xl lg:pr-12">
             Under vertical marketing, coffee growers and suppliers can export
             directly to international buyers. Under the ECX model, exporters
             approve high grade samples. However, the actual bulk coffee they
@@ -51,7 +51,7 @@ const ECXRole = (props: Props) => {
             lots. Now grading is done through the Ethiopian Coffee and Tea
             Authority (ECTA), without ECX&apos;s intervention. 
           </p>
-          <p className="w-1/2 lg:text-2xl pl-12">
+          <p className="w-full lg:w-1/2 lg:text-xl lg:pl-12">
             As of 2022, over 90% of Ethiopian coffee exported was processed
             through the vertical marketing model. Also under ECX&apos;s model,
             you pay for loading, unloading, warehouse rent, and commission for

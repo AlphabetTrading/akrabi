@@ -7,7 +7,7 @@ const Overview = (props: Props) => {
   return (
     <div className="bg-primary w-full h-fit flex flex-col items-center py-12 lg:py-24">
       <div className="w-11/12 lg:w-5/6 flex items-center">
-        <div className="w-full flex flex-col px-5 lg:px-16 items-center">
+        <div className="w-full flex flex-col lg:px-10 items-center">
           <div className="w-11/12 flex flex-col gap-y-4 text-secondary">
             <div className="flex items-center gap-x-2">
               <img src="/icons/farm-detail-check.svg" />
@@ -15,7 +15,7 @@ const Overview = (props: Props) => {
                 Overview
               </h1>
             </div>
-            <h1 className="text-5xl">
+            <h1 className="text-2xl lg:text-5xl">
               What is transparency in the coffee industry?
             </h1>
             <p className="lg:text-xl">

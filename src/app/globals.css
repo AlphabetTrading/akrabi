@@ -35,3 +35,11 @@ body {
   background-color: #281d13;
   color: white;
 }
+
+.challenges .slick-slide {
+  scale: 0.87;
+}
+
+.challenges .slick-current {
+  scale: 1;
+}

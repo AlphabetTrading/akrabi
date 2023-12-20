@@ -137,7 +137,7 @@ const Navbar = ({ isOpen, toggleOpen }: Props) => {
           <div className="sr-only">Menu</div>
           <AnimatePresence>
             <motion.svg
-              className="close-icon lg:fill-black/70 fill-white "
+              className="w-full h-full close-icon lg:fill-black/70 fill-white "
               stroke="currentColor"
               fill="currentColor"
               strokeWidth="0"

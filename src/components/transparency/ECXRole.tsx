@@ -19,7 +19,7 @@ const ECXRole = (props: Props) => {
           <div className="w-11/12 lg:w-1/2 flex flex-col items-start py-8 lg:p-12 lg:pl-16">
             <div className="w-full lg:w-5/6 flex flex-col gap-y-4">
               <h1 className="w-full text-2xl lg:text-5xl font-semibold lg:mb-4">
-                ECX&apos;s Role in Coffee Market Diminishes
+                ECX&apos;s role in the coffee market diminishes
               </h1>
               <p className="lg:text-xl">
                 Ethiopia&apos;s modality for coffee exports has shifted from the

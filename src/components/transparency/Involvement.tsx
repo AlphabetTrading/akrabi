@@ -52,7 +52,7 @@ const Involvement = (props: Props) => {
             </p>
           </div>
         </div>
-        <div className="w-full lg:w-2/5 h-[50vh] lg:h-screen relative">
+        <div className="w-full lg:w-2/5 h-[60vh] lg:h-screen relative py-4">
           <Image
             className="object-cover object-center w-full h-full"
             fill

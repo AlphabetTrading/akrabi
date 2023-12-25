@@ -16,23 +16,24 @@ const Overview = (props: Props) => {
               </h1>
             </div>
             <h1 className="text-2xl lg:text-5xl font-semibold">
-              What is transparency in the coffee industry?
+              What is transparency and traceability in the coffee industry?
             </h1>
             <p className="lg:text-xl">
-              Transparency within the coffee export industry is essential for
-              establishing a fair and sustainable coffee ecosystem. It
-              encompasses tracking coffee beans from farm to cup, disclosing
-              prices paid to farmers, and highlighting sustainable agricultural
-              practices. This educates and empowers consumers to make informed
-              choices while fostering ethical sourcing practices.
+              Transparency and traceability are vital in coffee exports,
+              ensuring fairness and sustainability. Transparency reveals the
+              bean journey, prices to farmers, and sustainable methods.
+              Traceability tracks beans meticulously, ensuring authenticity and
+              accountability. This approach empowers consumers, supports fair
+              farmer compensation, promotes sustainability, and fosters an
+              informed coffee community.
             </p>
             <p className="lg:text-xl">
-              Understanding the intricate supply chain dynamics is crucial.
-              Transparency encourages documentation and disclosure of fair
-              compensation for coffee farmers. Revealing prices paid to farmers
-              sheds light on the value chain, ensuring they receive equitable
-              remuneration, fortifying their livelihoods and supporting local
-              economies.
+              The combination of transparency and traceability not only educates
+              consumers about the origin and journey of their coffee but also
+              ensures that ethical and sustainable practices are followed. This
+              approach encourages fair compensation for farmers, promotes
+              environmental stewardship, and empowers individuals to support
+              ethical coffee sourcing.
             </p>
           </div>
         </div>

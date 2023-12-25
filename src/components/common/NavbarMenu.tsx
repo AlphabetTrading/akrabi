@@ -84,8 +84,8 @@ const navigationItems = [
   },
   {
     id: 7,
-    title: "Transparency",
-    link: "/transparency",
+    title: "Transparency & Traceability",
+    link: "/transparency-and-traceability",
     image:
       "https://akraabi.s3.amazonaws.com/transparency/transparency-hero.webp",
   },

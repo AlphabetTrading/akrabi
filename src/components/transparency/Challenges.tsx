@@ -103,9 +103,9 @@ const Challenges = (props: Props) => {
         </h1>
         <p className="lg:text-xl lg:w-3/4">
           The Ethiopian coffee sector, renowned for its diverse and high-quality
-          coffee beans, faces several challenges in achieving transparency
-          throughout its supply chain. These challenges hinder the ability to
-          track the origins and movement of coffee beans.
+          coffee beans, faces several challenges in achieving transparency and
+          traceability throughout its supply chain. These challenges hinder the
+          ability to track the origins and movement of coffee beans.
         </p>
       </div>
       <motion.div className="w-11/12 lg:self-end py-8">

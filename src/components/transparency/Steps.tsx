@@ -1,8 +1,9 @@
-"use client";
-
+import React, { useRef, useState } from "react";
 import Image from "next/image";
-import React, { useState } from "react";
-import Timeline from "../transparency/Timeline";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Timeline from "./Timeline";
 
 type Props = {};
 
@@ -12,7 +13,7 @@ const steps = [
     title: "Harvesting",
     image: "/images/qpd/harvesting.svg",
     description:
-      "Coffee beans are typically harvested by hand-picking when they reach the desired level of ripeness (Red is the most desired color). At this step, most of the expense is related to labor. Skilled laborers are required to hand-pick the ripe coffee cherries",
+      "Coffee beans are typically harvested by hand-picking when they reach the desired level of ripeness (Red is the most desired color). At this step, most of the expense is acquiring the red cherry. Skilled laborers are required to hand-pick these ripe coffee cherries",
   },
   {
     id: 2,
@@ -65,72 +66,87 @@ const steps = [
   },
 ];
 
-const Traceability = (props: Props) => {
+const Steps = (props: Props) => {
+  const sliderRef = useRef<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
+    afterChange: (index: number) => setActiveIndex(index),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="w-full flex flex-col items-center my-16">
-      <div className="w-5/6 flex flex-col gap-y-8">
-        <div className="flex gap-x-2">
-          <img src="/icons/farm-detail-check.svg" />
-          <h1 className="text-2xl font-semibold uppercase">Overview</h1>
-        </div>
-        <h1 className="text-5xl font-semibold">Traceability</h1>
-        <div className="flex justify-between">
-          <p className="mr-12 text-xl">
-            In the world of green coffee export, traceability serves as the
-            cornerstone of our commitment to quality and transparency. It&apos;s
-            a meticulous process that allows us to trace the journey of each
-            individual green coffee bean from its humble beginnings on coffee
-            farms to its destination at your roastery. This unwavering
-            dedication to traceability ensures that as a roaster, you receive
-            green coffee beans of the utmost caliber, allowing you to craft
-            exceptional coffee experiences for your customers.
-          </p>
-          <p className="ml-12 text-xl">
-            In practice, green coffee traceability involves the use of
-            technology and rigorous record-keeping to maintain the integrity of
-            the supply chain. It empowers stakeholders to verify the
-            authenticity and quality of coffee beans while complying with
-            regulations and promoting ethical and sustainable practices
-            throughout the coffee industry. Green coffee traceability plays a
-            vital role in creating a more transparent, responsible, and
-            environmentally conscious coffee industry.
+    <div className="w-full flex flex-col items-center py-12">
+      <div className="w-11/12 lg:w-5/6">
+        <div className="w-11/12">
+          <h1 className="text-2xl lg:text-5xl font-semibold mb-4 lg:mb-8">
+            Every step of the process
+          </h1>
+          <p className="w-full lg:w-11/12 lg:text-xl my-4 lg:my-8">
+            Discover the detailed process behind Washed Grade 2 coffee
+            production. Explore each essential step, from harvesting and
+            processing to grading, packaging, and global export. Gain insight
+            into the careful production that defines the quality and flavor of
+            this renowned coffee variety.
           </p>
         </div>
-        <div>
-          <div className="flex items-center h-80 transition-all duration-300">
-            <div className="relative w-1/2 h-full mr-8 rounded-xl overflow-hidden">
-              <Image
-                fill
-                className="h-full object-cover"
-                alt=""
-                src={steps[activeIndex].image}
-              />
-            </div>
-            <div className="w-1/2 flex flex-col gap-y-3 ml-8">
-              <div className="flex gap-x-2">
-                <img src="/icons/farm-detail-check.svg" />
-                <h1 className="text-2xl font-semibold uppercase">
-                  Step {steps[activeIndex].id}
-                </h1>
+        <Slider ref={sliderRef} className="relative" {...settings}>
+          {steps.map((step, index) => (
+            <div
+              key={step.id}
+              className="!w-full !flex flex-col lg:!flex-row items-center lg:h-80 gap-8 lg:gap-16 lg:mx-1"
+            >
+              <div className="relative w-full lg:w-1/2 h-64 lg:h-full overflow-hidden rounded-xl">
+                <Image
+                  fill
+                  className="absolute inset-0 h-full object-cover"
+                  alt=""
+                  src={step.image}
+                />
               </div>
-              <h1 className="text-3xl font-semibold">
-                {steps[activeIndex].title}
-              </h1>
-              <p className="w-4/5 text-[#646464] text-lg">
-                {steps[activeIndex].description}
-              </p>
+
+              <div className="w-full lg:w-1/2 flex flex-col gap-y-1 lg:gap-y-3">
+                <div className="flex gap-x-2">
+                  <img src="/icons/farm-detail-check.svg" />
+                  <h1 className="lg:text-2xl font-semibold uppercase">
+                    Step {step.id}
+                  </h1>
+                </div>
+                <h1 className="text-xl lg:text-3xl font-semibold">
+                  {step.title}
+                </h1>
+                <p className="w-full lg:w-4/5 text-[#646464] lg:text-lg">
+                  {step.description}
+                </p>
+              </div>
             </div>
-          </div>
-          <Timeline
-            steps={steps}
-            activeIndex={activeIndex}
-            setActiveIndex={setActiveIndex}
-          />
-        </div>
+          ))}
+        </Slider>
+        <Timeline
+          steps={steps}
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+          sliderRef={sliderRef}
+        />
       </div>
     </div>
   );
 };
 
-export default Traceability;
+export default Steps;

@@ -3,6 +3,7 @@ import SolvingProblem from "./SolvingProblem";
 import ECXRole from "./ECXRole";
 import Challenges from "./Challenges";
 import Involvement from "./Involvement";
+import Steps from "./Steps";
 
 type Props = {};
 
@@ -13,6 +14,7 @@ const Content = (props: Props) => {
       <ECXRole />
       <Challenges />
       <Involvement />
+      <Steps />
     </div>
   );
 };
